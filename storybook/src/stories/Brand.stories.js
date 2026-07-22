@@ -1,5 +1,5 @@
 import { currentBrand } from '../brands.js';
-import { bestOn, contrast, wcagRating } from '../theme.js';
+import { bestOn, contrast, wcagRating, tokensToVars, resolveFamily } from '../theme.js';
 import IMAGES from '../images.json';
 import CONTENT from '../content.json';
 
@@ -72,7 +72,24 @@ export const Guideline = (args, context) => {
   const scale = f.scale || {};
   const typeRows = Object.entries(scale).sort((a, d) => d[1] - a[1]).map(([k, px]) =>
     `<div class="type-row"><div class="meta">${k} · ${px}px</div><div style="font-family:${px >= (scale.h3 || 22) ? 'var(--font-heading)' : 'var(--font-body)'},var(--font-fallback);font-size:${px}px;line-height:1.1;font-weight:${px >= (scale.h3 || 22) ? 700 : 400}">${wm}</div></div>`).join('');
-  const dl = (t2, s2, ic) => `<div class="dl"><div class="ic2">${ic}</div><div><div class="t">${t2}</div><div class="s">${s2}</div></div></div>`;
+  // ---- Real, functional downloads via data: URIs (no server needed) ----
+  const headFam = resolveFamily(f.heading) || 'serif';
+  const svgW = Math.max(320, b.name.length * 34);
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${svgW}" height="120" viewBox="0 0 ${svgW} 120">`
+    + `<rect width="100%" height="100%" fill="${c.primary || '#111'}"/>`
+    + `<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="${headFam}, serif" font-weight="700" font-size="52" fill="${bestOn(c.primary || '#111')}">${esc(b.name)}</text></svg>`;
+  const cssVars = tokensToVars(t);
+  const css = `/* ${b.name} — design tokens */\n:root {\n`
+    + Object.entries(cssVars).map(([k, v]) => `  ${k}: ${v};`).join('\n') + '\n}\n';
+  const kit = { name: b.name, slug: b.slug, branche: b.branche, claim: b.claim, anrede: b.anrede,
+    positioning: b.positioning, persoenlichkeit: persona, content: ct, tokens: t };
+  const uri = (mime, data) => `data:${mime};charset=utf-8,${encodeURIComponent(data)}`;
+  const kitHref = uri('application/json', JSON.stringify(kit, null, 2));
+  const tokHref = uri('application/json', JSON.stringify(t, null, 2));
+  const cssHref = uri('text/css', css);
+  const svgHref = uri('image/svg+xml', svg);
+  const fontsUrl = 'https://fonts.google.com/specimen/' + (headFam || 'Inter').replace(/ /g, '+');
+  const dl = (t2, s2, ic, href, attr) => `<a class="dl" href="${href}" ${attr}><div class="ic2">${ic}</div><div><div class="t">${t2}</div><div class="s">${s2}</div></div></a>`;
 
   return `
   <section class="hero" style="${heroBg}">
@@ -82,13 +99,13 @@ export const Guideline = (args, context) => {
       <h1 class="display">${wm}</h1>
       <p class="lead">${claim}</p>
       <div class="row" style="margin-top:12px">
-        <button class="btn btn--accent btn--lg">Download kit</button>
-        <button class="btn btn--lg" style="background:transparent;color:var(--on-primary);border-color:color-mix(in srgb,var(--on-primary) 45%,transparent)">Contents</button>
+        <a class="btn btn--accent btn--lg" href="${kitHref}" download="${b.slug}-brand-kit.json">Download kit</a>
+        <a class="btn btn--lg" href="#contents" style="background:transparent;color:var(--on-primary);border-color:color-mix(in srgb,var(--on-primary) 45%,transparent)">Contents</a>
       </div>
     </div>
   </section>
 
-  <section class="band"><div class="wrap stack">
+  <section class="band" id="contents"><div class="wrap stack">
     <p class="eyebrow">Contents</p><div class="toc">${toc}</div>
   </div></section>
 
@@ -217,12 +234,13 @@ export const Guideline = (args, context) => {
   <section class="band sec"><div class="wrap stack-lg">
     ${sec('12', 'assets', 'Resources', 'Assets & downloads')}
     <div class="downloads">
-      ${dl('Logo', 'SVG · EPS · PNG', 'SVG')}
-      ${dl('Wordmark', 'light &amp; dark', 'PNG')}
-      ${dl(esc(f.heading), 'Webfont', 'WOFF2')}
-      ${dl('Design tokens', 'colors · type · space', 'JSON')}
-      ${dl('Guidelines', 'this document', 'PDF')}
+      ${dl('Wordmark', 'SVG', 'SVG', svgHref, `download="${b.slug}-wordmark.svg"`)}
+      ${dl('Design tokens', 'tokens.json', 'JSON', tokHref, `download="${b.slug}.tokens.json"`)}
+      ${dl('CSS variables', 'tokens.css', 'CSS', cssHref, `download="${b.slug}.css"`)}
+      ${dl(esc(f.heading), 'Google Fonts ↗', 'FONT', fontsUrl, 'target="_top" rel="noopener"')}
+      ${dl('Full brand kit', 'brand-kit.json', 'KIT', kitHref, `download="${b.slug}-brand-kit.json"`)}
     </div>
+    <p class="caption">All downloads are generated live from the brand's design tokens — no server.</p>
     <p class="caption">${wm} — Brand Guidelines · fictional brand · photography via Unsplash · type via Google Fonts.</p>
   </div></section>`;
 };
