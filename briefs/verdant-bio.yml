@@ -1,0 +1,14 @@
+name: Verdant Bio
+branche: Naturkosmetik / Bio-Hautpflege
+anrede: du
+claim: "Weniger, aber ehrlich."
+persoenlichkeit:
+  - minimalistisch
+  - natürlich
+  - ehrlich
+  - achtsam
+farb_primary: "#7C8B6A"
+farb_secondary: "#C9B29B"
+farb_accent: "#B5714E"
+font_heading: "Cormorant Garamond"
+font_body: "Source Sans 3"
