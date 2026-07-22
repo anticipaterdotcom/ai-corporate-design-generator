@@ -1,0 +1,14 @@
+name: Pixelwald Studio
+branche: Indie-Game-Studio / interaktive Erlebnisse
+anrede: du
+claim: "Wo Pixel wild wachsen."
+persoenlichkeit:
+  - mutig
+  - verspielt
+  - technikverliebt
+  - community-nah
+farb_primary: "#0E0E14"
+farb_secondary: "#22E0FF"
+farb_accent: "#FF2E88"
+font_heading: "Chakra Petch"
+font_body: "Inter"
