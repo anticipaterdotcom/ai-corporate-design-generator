@@ -8,6 +8,21 @@ export default { title: 'Brand/Guideline' };
 const esc = (s) => String(s || '').replace(/[&<>"]/g, (c) =>
   ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
+// --- Security: brand data is untrusted (anyone can open a PR). Any value that
+// lands INSIDE a style="..." attribute is validated, so a hostile token/image
+// can never break out of the attribute and inject markup/handlers. ---
+// Only accept literal CSS hex colors; anything else falls back to a safe value.
+const hx = (v, fallback = 'transparent') =>
+  (/^#([0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/.test(String(v || '').trim())
+    ? String(v).trim() : fallback);
+// Only accept https URLs on the image hosts we actually use (Unsplash); reject
+// quotes/parens so nothing can escape a url('...') context. Else: no image.
+const safeUrl = (u) => {
+  const s = String(u || '').trim();
+  return /^https:\/\/(images|plus)\.unsplash\.com\/[^"'()\s<>]*$/.test(s) ? s : '';
+};
+const imgBg = (u) => { const s = safeUrl(u); return s ? `url('${s}')` : 'none'; };
+
 const sec = (no, id, kicker, title) =>
   `<div class="stack" id="${id}"><p class="secno">${no}</p><p class="eyebrow">${esc(kicker)}</p><h2 class="h1">${esc(title)}</h2></div>`;
 
@@ -36,9 +51,10 @@ export const Guideline = (args, context) => {
   const wm1 = esc(b.name.split(' ')[0]);
 
   const arch = archetype(t);
+  const heroUrl = safeUrl(hero);
   const imageHero = !['editorial', 'bold'].includes(arch);
-  const heroBg = (imageHero && hero)
-    ? `background-image: linear-gradient(100deg, var(--color-primary) 0%, var(--color-primary) 30%, color-mix(in srgb, var(--color-primary) 52%, transparent) 64%, color-mix(in srgb, var(--color-primary) 8%, transparent) 100%), url('${hero}'); background-size: cover; background-position: center right;`
+  const heroBg = (imageHero && heroUrl)
+    ? `background-image: linear-gradient(100deg, var(--color-primary) 0%, var(--color-primary) 30%, color-mix(in srgb, var(--color-primary) 52%, transparent) 64%, color-mix(in srgb, var(--color-primary) 8%, transparent) 100%), url('${heroUrl}'); background-size: cover; background-position: center right;`
     : '';
 
   const toc = [
@@ -50,20 +66,21 @@ export const Guideline = (args, context) => {
 
   const namedColors = (ct.farbwelt || []).map((col) => {
     const on = bestOn(col.hex);
-    return `<div class="cw"><div class="chip" style="background:${col.hex};color:${on}"><span class="role">${esc(col.rolle)}</span></div>
+    return `<div class="cw"><div class="chip" style="background:${hx(col.hex)};color:${on}"><span class="role">${esc(col.rolle)}</span></div>
       <div class="meta"><div class="nm">${esc(col.name)}</div><div class="hx">${esc(col.hex)}</div></div></div>`;
   }).join('');
 
   const ramp = ['900', '700', '500', '100', '0'].filter((k) => n[k]).map((k) => {
     const hex = n[k]; const on = bestOn(hex);
-    return `<div style="background:${hex};color:${on}">${k}</div>`;
+    return `<div style="background:${hx(hex)};color:${on}">${k}</div>`;
   }).join('');
 
   const pair = (label, bg, fg) => {
     const cr = contrast(bg, fg); const pass = cr >= 4.5;
-    return `<div class="pair" style="background:${bg};color:${fg}">
-      <div class="sample">Aa</div><div style="font-size:12px;opacity:.85">${label}</div>
-      <span class="aa" style="background:${pass ? 'rgba(255,255,255,.25)' : 'rgba(0,0,0,.25)'};color:${fg}">${wcagRating(cr)} · ${cr.toFixed(1)}:1</span></div>`;
+    const sbg = hx(bg, '#fff'); const sfg = hx(fg, '#111');
+    return `<div class="pair" style="background:${sbg};color:${sfg}">
+      <div class="sample">Aa</div><div style="font-size:12px;opacity:.85">${esc(label)}</div>
+      <span class="aa" style="background:${pass ? 'rgba(255,255,255,.25)' : 'rgba(0,0,0,.25)'};color:${sfg}">${wcagRating(cr)} · ${cr.toFixed(1)}:1</span></div>`;
   };
 
   const misuse = [['stretch', 'Nicht verzerren'], ['recolor', 'Nicht umfärben'], ['rot', 'Nicht drehen'], ['shadow', 'Keine Effekte']]
@@ -78,7 +95,7 @@ export const Guideline = (args, context) => {
   const headFam = resolveFamily(f.heading) || 'serif';
   const svgW = Math.max(320, b.name.length * 34);
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${svgW}" height="120" viewBox="0 0 ${svgW} 120">`
-    + `<rect width="100%" height="100%" fill="${c.primary || '#111'}"/>`
+    + `<rect width="100%" height="100%" fill="${hx(c.primary, '#111')}"/>`
     + `<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="${headFam}, serif" font-weight="700" font-size="52" fill="${bestOn(c.primary || '#111')}">${esc(b.name)}</text></svg>`;
   const cssVars = tokensToVars(t);
   const css = `/* ${b.name} — design tokens */\n:root {\n`
@@ -106,7 +123,7 @@ export const Guideline = (args, context) => {
       </div>
     </div>
   </section>
-  ${arch === 'editorial' && hero ? `<div class="editorial-band" style="background-image:url('${hero}')"></div>` : ''}
+  ${arch === 'editorial' && heroUrl ? `<div class="editorial-band" style="background-image:${imgBg(hero)}"></div>` : ''}
 
   <section class="band" id="contents"><div class="wrap stack">
     <p class="eyebrow">Contents</p><div class="toc">${toc}</div>
@@ -215,9 +232,9 @@ export const Guideline = (args, context) => {
     <div class="apps">
       <div><div class="stage"><div class="bizcard"><div class="wm">${wm}</div><div class="meta">${esc(b.branche)}<br>hello@${domain}<br>${domain}</div></div></div><p class="stage__cap">Business card</p></div>
       <div><div class="stage"><div class="letterhead"><div class="lh-top"><span class="lh-wm">${wm}</span><span style="font-family:var(--font-mono);font-size:10px;color:var(--muted)">${domain}</span></div><div class="lh-lines"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div><p class="stage__cap">Letterhead</p></div>
-      <div><div class="stage"><div class="post"><div class="img" style="background-image:url('${imgs[1] || hero || ''}')"></div><div class="veil"></div><div class="inner"><span class="tag">${esc(persona[0] || 'new')}</span><div class="headline">${claim}</div></div></div></div><p class="stage__cap">Social post</p></div>
+      <div><div class="stage"><div class="post"><div class="img" style="background-image:${imgBg(imgs[1] || hero)}"></div><div class="veil"></div><div class="inner"><span class="tag">${esc(persona[0] || 'new')}</span><div class="headline">${claim}</div></div></div></div><p class="stage__cap">Social post</p></div>
       <div><div class="stage"><div class="poster"><div class="kicker">${esc(b.branche)}</div><div class="stack" style="gap:14px"><div class="rule"></div><div class="big">${claim}</div></div><div class="kicker">${wm} — ${domain}</div></div></div><p class="stage__cap">Poster</p></div>
-      <div><div class="stage"><div class="phone"><div class="notch"></div><div class="appbar">${wm}</div><div class="appimg" style="background-image:url('${imgs[2] || hero || ''}')"></div><div class="appcard"><div class="t">${esc(persona[1] || b.name)}</div><div class="d">${esc(b.branche)}</div></div><div class="appbtn">Get started</div></div></div><p class="stage__cap">App screen</p></div>
+      <div><div class="stage"><div class="phone"><div class="notch"></div><div class="appbar">${wm}</div><div class="appimg" style="background-image:${imgBg(imgs[2] || hero)}"></div><div class="appcard"><div class="t">${esc(persona[1] || b.name)}</div><div class="d">${esc(b.branche)}</div></div><div class="appbtn">Get started</div></div></div><p class="stage__cap">App screen</p></div>
       <div><div class="stage"><div class="pack"><div class="p-wm">${wm1}</div><div class="p-dot"></div></div></div><p class="stage__cap">Packaging</p></div>
       <div><div class="stage"><div class="signage">${wm1}</div></div><p class="stage__cap">Signage</p></div>
     </div>

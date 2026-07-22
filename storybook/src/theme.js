@@ -9,6 +9,18 @@ export const GOOGLE_FONT_MAP = {
   'Canela': 'Playfair Display',
   'Clash Display': 'Space Grotesk',
   'Aktiv Grotesk': 'Archivo',
+  // weitere kommerzielle Fonts, die die KI wählen kann -> nahe Google-Äquivalente
+  'GT Sectra': 'Fraunces',
+  'GT Sectra Display': 'Fraunces',
+  'GT America': 'Inter',
+  'Neue Haas Grotesk': 'Inter',
+  'Neue Haas Unica': 'Inter',
+  'Helvetica Now': 'Inter',
+  'Reckless': 'Playfair Display',
+  'Ivar': 'Lora',
+  'Tiempos': 'Lora',
+  'Recoleta': 'DM Serif Display',
+  'Grotesque': 'Space Grotesk',
 };
 
 export function resolveFamily(name) {
@@ -29,9 +41,10 @@ const ARCHETYPES = {
 };
 
 export function archetype(tokens = {}) {
-  const h = String((tokens.font || {}).heading || '').split(',')[0].trim().replace(/^['"]|['"]$/g, '');
+  const raw = String((tokens.font || {}).heading || '').split(',')[0].trim().replace(/^['"]|['"]$/g, '');
+  const resolved = resolveFamily(raw); // e.g. "GT Sectra Display" -> "Fraunces"
   for (const [k, list] of Object.entries(ARCHETYPES)) {
-    if (list.includes(h)) return k;
+    if (list.includes(raw) || list.includes(resolved)) return k;
   }
   return 'corporate';
 }
