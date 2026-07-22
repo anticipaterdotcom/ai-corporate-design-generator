@@ -1,14 +1,15 @@
 name: Deploy Storybook
 
 # Baut das Storybook aus den committeten Tokens (tokens/*.tokens.json) und
-# deployt es nach GitHub Pages. Läuft nur auf main -> braucht KEINEN AI-Key,
-# nur den ENGINE_TOKEN (Storybook-Builder liegt in der privaten Engine).
+# deployt es nach GitHub Pages. Der Storybook-Viewer liegt in diesem Repo -
+# es werden KEINE Secrets benötigt.
 
 on:
   push:
     branches: [main]
     paths:
       - "tokens/**"
+      - "storybook/**"
       - ".github/workflows/deploy-storybook.yml"
   workflow_dispatch: {}
 
@@ -30,13 +31,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Private Engine auschecken (nur Code)
-        uses: actions/checkout@v4
-        with:
-          repository: ${{ vars.ENGINE_REPO }}
-          token: ${{ secrets.ENGINE_TOKEN }}
-          path: _engine
-
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
@@ -44,15 +38,15 @@ jobs:
       - name: Tokens spiegeln + Storybook bauen
         run: |
           set -euo pipefail
-          rm -f _engine/storybook/src/brands/*.tokens.json
-          cp -f tokens/*.tokens.json _engine/storybook/src/brands/ 2>/dev/null || true
-          cd _engine/storybook
+          mkdir -p storybook/src/brands
+          cp -f tokens/*.tokens.json storybook/src/brands/ 2>/dev/null || true
+          cd storybook
           npm ci
           npm run build-storybook
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: _engine/storybook/storybook-static
+          path: storybook/storybook-static
       - id: deploy
         uses: actions/deploy-pages@v4

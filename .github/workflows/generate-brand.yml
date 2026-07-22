@@ -122,17 +122,14 @@ jobs:
             --out-agents agents \
             --out-tokens tokens
 
-      - name: Storybook bauen (nur öffentliche Tokens)
+      - name: Storybook bauen (Viewer liegt in diesem Repo)
         run: |
           set -euo pipefail
-          rm -f _engine/storybook/src/brands/*.tokens.json
-          cp -f tokens/*.tokens.json _engine/storybook/src/brands/ 2>/dev/null || true
-          cd _engine/storybook
+          mkdir -p storybook/src/brands
+          cp -f tokens/*.tokens.json storybook/src/brands/ 2>/dev/null || true
+          cd storybook
           npm ci
           npm run build-storybook
-          cd "$GITHUB_WORKSPACE"
-          rm -rf storybook-static
-          cp -r _engine/storybook/storybook-static storybook-static
 
       - name: Artefakte an PR-Branch committen
         if: needs.guard.outputs.pr != ''
@@ -152,7 +149,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: storybook-${{ github.run_id }}
-          path: storybook-static
+          path: storybook/storybook-static
           retention-days: 14
 
       - name: PR kommentieren

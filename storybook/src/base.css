@@ -1,0 +1,77 @@
+/* Basis-Styles der Story-Komponenten. Alles zieht Farben/Maße aus CSS-Variablen,
+   die der Brand-Decorator je Marke setzt (siehe .storybook/preview.js). */
+
+.acdg-canvas {
+  --font-fallback: system-ui, -apple-system, Segoe UI, sans-serif;
+  background: var(--color-neutral-0, #fff);
+  color: var(--color-neutral-900, #111);
+  font-family: var(--font-body), var(--font-fallback);
+  min-height: 100vh;
+  padding: var(--space-5, 32px);
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+.acdg-canvas * { box-sizing: border-box; }
+
+/* ---------- Typografie ---------- */
+.t-h1 { font-family: var(--font-heading), var(--font-fallback); font-size: var(--font-h1, 44px); font-weight: var(--weight-bold, 700); line-height: 1.1; margin: 0 0 var(--space-3, 16px); }
+.t-h2 { font-family: var(--font-heading), var(--font-fallback); font-size: var(--font-h2, 30px); font-weight: var(--weight-bold, 700); line-height: 1.2; margin: 0 0 var(--space-3, 16px); }
+.t-h3 { font-family: var(--font-heading), var(--font-fallback); font-size: var(--font-h3, 22px); font-weight: var(--weight-medium, 500); line-height: 1.3; margin: 0 0 var(--space-2, 8px); }
+.t-body { font-size: var(--font-body, 16px); margin: 0 0 var(--space-3, 16px); max-width: 60ch; }
+.t-caption { font-size: var(--font-caption, 13px); color: var(--color-neutral-500, #667); }
+.t-mono { font-family: var(--font-mono), ui-monospace, monospace; }
+
+.muted { color: var(--color-neutral-500, #667); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: var(--space-1, 4px);
+  font: inherit; font-weight: var(--weight-medium, 500);
+  padding: var(--space-2, 8px) var(--space-4, 24px);
+  border-radius: var(--radius-md, 8px);
+  border: 2px solid transparent; cursor: pointer;
+  transition: transform var(--motion-fast, 150ms) var(--motion-easing, ease), filter var(--motion-fast, 150ms) var(--motion-easing, ease);
+}
+.btn:hover { filter: brightness(1.05); transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn--primary { background: var(--color-primary, #123); color: var(--color-neutral-0, #fff); }
+.btn--secondary { background: var(--color-secondary, #345); color: var(--color-neutral-0, #fff); }
+.btn--accent { background: var(--color-accent, #5be0b0); color: var(--color-neutral-900, #111); }
+.btn--ghost { background: transparent; color: var(--color-primary, #123); border-color: var(--color-primary, #123); }
+
+/* ---------- Card ---------- */
+.card {
+  background: var(--color-neutral-0, #fff);
+  border: 1px solid var(--color-neutral-100, #eee);
+  border-radius: var(--radius-lg, 16px);
+  box-shadow: var(--elevation-md, 0 6px 20px rgba(0,0,0,.12));
+  padding: var(--space-4, 24px);
+  max-width: 380px;
+}
+.card__accent { height: 6px; border-radius: var(--radius-pill, 999px); background: var(--color-accent, #5be0b0); margin-bottom: var(--space-3, 16px); }
+
+/* ---------- Badge ---------- */
+.badge { display: inline-block; font-size: var(--font-caption, 13px); font-weight: var(--weight-medium, 500); padding: 2px var(--space-2, 8px); border-radius: var(--radius-pill, 999px); color: #fff; }
+.badge--primary { background: var(--color-primary, #123); }
+.badge--accent { background: var(--color-accent, #5be0b0); color: var(--color-neutral-900, #111); }
+.badge--success { background: var(--color-success, #1e9e6a); }
+.badge--warning { background: var(--color-warning, #e0a22b); color: #111; }
+.badge--danger { background: var(--color-danger, #d24b4b); }
+.badge--info { background: var(--color-info, #2e7bc4); }
+
+/* ---------- Swatches ---------- */
+.swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--space-2, 8px); }
+.swatch { border-radius: var(--radius-md, 8px); overflow: hidden; border: 1px solid var(--color-neutral-100, #eee); }
+.swatch__chip { height: 72px; }
+.swatch__meta { padding: var(--space-2, 8px); font-size: var(--font-caption, 13px); background: var(--color-neutral-0, #fff); }
+.swatch__name { font-weight: var(--weight-medium, 500); }
+.swatch__hex { font-family: var(--font-mono), ui-monospace, monospace; color: var(--color-neutral-500, #667); text-transform: uppercase; }
+
+/* ---------- Layout-Helfer ---------- */
+.stack > * + * { margin-top: var(--space-3, 16px); }
+.row { display: flex; flex-wrap: wrap; gap: var(--space-2, 8px); align-items: center; }
+.hero { padding: var(--space-6, 48px); border-radius: var(--radius-lg, 16px); background: var(--color-primary, #123); color: var(--color-neutral-0, #fff); }
+.hero .t-h1, .hero .t-body { color: var(--color-neutral-0, #fff); }
+.spacing-bar { background: var(--color-primary, #123); height: 16px; border-radius: var(--radius-sm, 4px); }
+.radius-demo { width: 96px; height: 96px; background: var(--color-secondary, #345); display: inline-flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; }

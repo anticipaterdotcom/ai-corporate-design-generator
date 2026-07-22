@@ -1,9 +1,15 @@
 # Setup (einmalig, für Maintainer)
 
-Damit die Generierung läuft, brauchst du **zwei Secrets** und **GitHub Pages**.
+Zwei getrennte Dinge:
+
+- **Live-Storybook** (zeigt alle Marken aus `tokens/`): braucht **nur GitHub Pages**
+  aktiviert – **keine** Secrets. → Schritt 2.
+- **AI-Generierung neuer Marken** (`/generate`): braucht zusätzlich die beiden
+  Secrets + `ENGINE_REPO`. → Schritt 1.
+
 Nichts davon wird je ins Repo committet.
 
-## 1 · Secrets anlegen
+## 1 · Secrets anlegen (nur für die AI-Generierung)
 
 Repo → **Settings → Secrets and variables → Actions → New repository secret**:
 

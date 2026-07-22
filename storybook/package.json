@@ -1,0 +1,17 @@
+{
+  "name": "acdg-storybook",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Storybook der AI-generierten Marken (Design-Tokens -> lebendige Vorschau)",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build -o storybook-static"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^8.6.0",
+    "@storybook/html-vite": "^8.6.0",
+    "storybook": "^8.6.0",
+    "vite": "^5.4.0"
+  }
+}
