@@ -4,44 +4,44 @@
   "branche": "Ökostrom / Erneuerbare Energien",
   "claim": "Strom, so klar wie der Norden.",
   "anrede": "Sie",
-  "schriftfamilie": "Söhne",
   "persoenlichkeit": [
     "vertrauenswürdig",
     "klar",
     "vorausschauend",
     "ruhig"
   ],
-  "positioning": "Regionaler Ökostrom-Versorger, der Verlässlichkeit ausstrahlt und die Ruhe einer nordischen Nacht mit dem Aufbruchssignal eines Polarlichts verbindet.",
+  "schriftfamilie": "Söhne",
+  "positioning": "- **Mission:** Nordlicht Energie versorgt Privathaushalte, Kommunen und mittelständische Unternehmen mit echtem Ökostrom aus Wasser, Wind und Sonne – und macht den Wechsel zu erneuerbaren Energien so einfach und nachvollziehbar wie möglich.",
   "tokens": {
     "color": {
       "primary": "#0B2A4A",
       "secondary": "#126E6A",
       "accent": "#5BE0B0",
       "neutral": {
-        "900": "#0A1622",
-        "700": "#324155",
-        "500": "#647587",
-        "100": "#EAF0F4",
-        "0": "#FFFFFF"
+        "900": "#0E1620",
+        "700": "#243240",
+        "500": "#7A8694",
+        "100": "#E3E8EC",
+        "0": "#F4F8FA"
       },
       "semantic": {
-        "success": "#1E9E6A",
-        "warning": "#E0A22B",
-        "danger": "#D24B4B",
-        "info": "#2E7BC4"
+        "success": "#126E6A",
+        "warning": "#D6A21E",
+        "danger": "#B03434",
+        "info": "#0B2A4A"
       }
     },
     "font": {
       "heading": "Söhne",
       "body": "Söhne",
-      "mono": "Söhne Mono",
-      "fallback": "system-ui, -apple-system, Segoe UI, sans-serif",
+      "mono": "'IBM Plex Mono', 'Söhne Mono', monospace",
+      "fallback": "Inter, 'Helvetica Neue', Arial, sans-serif",
       "scale": {
-        "h1": 44,
-        "h2": 30,
-        "h3": 22,
-        "body": 16,
-        "caption": 13
+        "h1": "44px",
+        "h2": "32px",
+        "h3": "24px",
+        "body": "16px",
+        "caption": "13px"
       },
       "weight": {
         "regular": 400,
@@ -50,35 +50,35 @@
       }
     },
     "space": {
-      "unit": 8,
+      "unit": "8px",
       "scale": [
-        0,
-        4,
-        8,
-        16,
-        24,
-        32,
-        48,
-        64
+        "4px",
+        "8px",
+        "16px",
+        "24px",
+        "32px",
+        "48px",
+        "64px",
+        "96px"
       ]
     },
     "radius": {
-      "sm": 4,
-      "md": 8,
-      "lg": 16,
-      "pill": 999
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "pill": "999px"
     },
     "motion": {
       "duration_ms": {
         "fast": 150,
-        "base": 250,
-        "slow": 400
+        "base": 240,
+        "slow": 420
       },
-      "easing": "cubic-bezier(0.2, 0, 0, 1)"
+      "easing": "cubic-bezier(0.22, 0.61, 0.36, 1)"
     },
     "elevation": {
-      "sm": "0 1px 2px rgba(10,22,34,.10)",
-      "md": "0 6px 20px rgba(10,22,34,.16)"
+      "sm": "0 1px 2px rgba(14, 22, 32, 0.08), 0 1px 3px rgba(14, 22, 32, 0.06)",
+      "md": "0 4px 12px rgba(14, 22, 32, 0.10), 0 8px 24px rgba(14, 22, 32, 0.08)"
     }
   }
 }

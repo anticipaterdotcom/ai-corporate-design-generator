@@ -1,12 +1,79 @@
 {
-  "aurea-finanz": ["https://images.unsplash.com/photo-1519674921880-e784bc34ebd4?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1782955452633-948ee84c453f?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1772112334845-86016056137b?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1777603371625-fe9aa715dc39?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1780257562910-fd385dfc774d?auto=format&fit=crop&w=1400&q=75"],
-  "frachtwerk-logistik": ["https://images.unsplash.com/photo-1606185540834-d6e7483ee1a4?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1606964212858-c215029db704?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1493946740644-2d8a1f1a6aff?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1678182451047-196f22a4143e?auto=format&fit=crop&w=1400&q=75"],
-  "kobold-kaffee": ["https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1513530176992-0cf39c4cbed4?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1607681034540-2c46cc71896d?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1580933073521-dc49ac0d4e6a?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?auto=format&fit=crop&w=1400&q=75"],
-  "lumen-health": ["https://images.unsplash.com/photo-1584936964770-7d9a3cd21143?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1584937046815-5ed7abc5a8c9?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1584937005173-c307e769aa24?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1474692321929-4d0c27302b7e?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1532798442725-41036acc7489?auto=format&fit=crop&w=1400&q=75"],
-  "nordlicht-energie": ["https://images.unsplash.com/photo-1706129295548-8106f98e5eef?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1659628241351-e344b9ae443d?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1670530096774-2f6320a98378?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1694687202364-789d2cfb5567?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1781444510899-ecf56f2bf1b6?auto=format&fit=crop&w=1400&q=75"],
-  "pixelwald-studio": ["https://images.unsplash.com/photo-1635776062127-d379bfcba9f8?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1614851099511-773084f6911d?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1635776063043-ab23b4c226f6?auto=format&fit=crop&w=1400&q=75"],
-  "saitenklang": ["https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1400&q=75"],
-  "steinbruch-bau": ["https://images.unsplash.com/photo-1694521787162-5373b598945c?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1519143009590-e3800b9df468?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1673978484281-e9370ac3b81c?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1694521788304-1d42378498da?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1664662566501-73a7e41d8c19?auto=format&fit=crop&w=1400&q=75"],
-  "verdant-bio": ["https://images.unsplash.com/photo-1748543668676-ea8241cb3886?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1551970634-747846a548cb?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1535663505464-81873dcdd303?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1584204559709-ca7d413229eb?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1626783416763-67a92e5e7266?auto=format&fit=crop&w=1400&q=75"],
-  "wolke7-reisen": ["https://images.unsplash.com/photo-1446038202205-1c96430dbdab?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1526442606252-cac5ab0d65b6?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1592500626473-e988dbea2184?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1451485435476-a244439c78cd?auto=format&fit=crop&w=1400&q=75", "https://images.unsplash.com/photo-1468324187476-c4e804213545?auto=format&fit=crop&w=1400&q=75"]
+  "aurea-finanz": [
+    "https://images.unsplash.com/photo-1733503747506-773e56e4078f?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1596843720750-7de9329da5d7?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1683313107043-283d0319a11e?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1726066012632-717de8552f16?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1726607424599-db0c41681494?auto=format&fit=crop&w=1400&q=75"
+  ],
+  "frachtwerk-logistik": [
+    "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1606185540834-d6e7483ee1a4?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1559297434-fae8a1916a79?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1573014089159-8ee711dc5a8e?auto=format&fit=crop&w=1400&q=75"
+  ],
+  "kobold-kaffee": [
+    "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1513530176992-0cf39c4cbed4?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1607681034540-2c46cc71896d?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1580933073521-dc49ac0d4e6a?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?auto=format&fit=crop&w=1400&q=75"
+  ],
+  "lumen-health": [
+    "https://images.unsplash.com/photo-1584936964770-7d9a3cd21143?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1584937046815-5ed7abc5a8c9?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1584937005173-c307e769aa24?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1474692321929-4d0c27302b7e?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1532798442725-41036acc7489?auto=format&fit=crop&w=1400&q=75"
+  ],
+  "nordlicht-energie": [
+    "https://images.unsplash.com/photo-1644567103258-6da3857faab4?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1568979288537-262dc64fb9d7?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1499571466915-ffc02b27d65e?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1683398092593-3be3697432bf?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1582481024061-4be0e115414f?auto=format&fit=crop&w=1400&q=75"
+  ],
+  "pixelwald-studio": [
+    "https://images.unsplash.com/photo-1635776062127-d379bfcba9f8?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1614851099511-773084f6911d?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1635776063043-ab23b4c226f6?auto=format&fit=crop&w=1400&q=75"
+  ],
+  "saitenklang": [
+    "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1504509546545-e000b4a62425?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1611339555312-e607c8352fd7?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1527150122806-f682d2fd8b09?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1615554851544-e6249b92a492?auto=format&fit=crop&w=1400&q=75"
+  ],
+  "steinbruch-bau": [
+    "https://images.unsplash.com/photo-1640113038160-d1ec534515e9?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1630756446157-24c0d1d83a84?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1665270817840-0a836be6196f?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1726730496299-5955da334323?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1543336698-b64f842cdf95?auto=format&fit=crop&w=1400&q=75"
+  ],
+  "verdant-bio": [
+    "https://images.unsplash.com/photo-1595181406656-e27924cd8f29?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1744117602751-8b9d047556ab?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1638897001803-c4e95a9c3ecc?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1720176234619-19e25ae6bb06?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1783958129540-a7be3a3c0735?auto=format&fit=crop&w=1400&q=75"
+  ],
+  "wolke7-reisen": [
+    "https://images.unsplash.com/photo-1674649414783-15b63952730d?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1613244470042-e69e8ccb303a?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1613244470504-4d0a17ce71d0?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1613244470201-ed366227a371?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1613244470181-e4ff087b4a24?auto=format&fit=crop&w=1400&q=75"
+  ],
+  "aurora-labs": [
+    "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1534156039819-c89418369a4f?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1709377195538-5522ed0f9e10?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1523821741446-edb2b68bb7a0?auto=format&fit=crop&w=1400&q=75",
+    "https://images.unsplash.com/photo-1711025372958-db48a4fe0ba1?auto=format&fit=crop&w=1400&q=75"
+  ]
 }

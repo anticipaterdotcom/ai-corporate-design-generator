@@ -19,7 +19,7 @@ kanonische Werte-Quelle (identisch mit dem Profil in `brands/`).
 - **Branche:** Logistik / Fracht / Supply Chain
 - **Claim (wörtlich verwenden):** „Fracht, die ankommt."
 - **Anrede:** Sie
-- **Persönlichkeit:** robust, zuverlässig, direkt, effizient
+- **Persönlichkeit:** robust, zuverlässig, direkt, effizient, kompetent
 
 ## Regeln
 - **Text:** Anrede „Sie" konsequent. Claim nur im obigen Wortlaut.
@@ -37,30 +37,30 @@ kanonische Werte-Quelle (identisch mit dem Profil in `brands/`).
     "secondary": "#2B2F36",
     "accent": "#F2A900",
     "neutral": {
-      "900": "#16181D",
-      "700": "#2B2F36",
-      "500": "#6B7280",
-      "100": "#EDEFF2",
+      "900": "#1A1C20",
+      "700": "#4A4F58",
+      "500": "#A8ADB4",
+      "100": "#E6E8EB",
       "0": "#FFFFFF"
     },
     "semantic": {
-      "success": "#2E9E5B",
-      "warning": "#E0A22B",
-      "danger": "#D2402F",
-      "info": "#2E7BC4"
+      "success": "#2E7D4F",
+      "warning": "#E8A33D",
+      "danger": "#C0392B",
+      "info": "#2C5F8D"
     }
   },
   "font": {
     "heading": "Roboto Condensed",
     "body": "Inter",
-    "mono": "IBM Plex Mono",
-    "fallback": "system-ui, -apple-system, Segoe UI, sans-serif",
+    "mono": "JetBrains Mono",
+    "fallback": "Helvetica Neue, Arial, sans-serif",
     "scale": {
-      "h1": 46,
-      "h2": 32,
-      "h3": 22,
-      "body": 16,
-      "caption": 13
+      "h1": "48px",
+      "h2": "32px",
+      "h3": "24px",
+      "body": "16px",
+      "caption": "13px"
     },
     "weight": {
       "regular": 400,
@@ -69,35 +69,36 @@ kanonische Werte-Quelle (identisch mit dem Profil in `brands/`).
     }
   },
   "space": {
-    "unit": 8,
+    "unit": "4px",
     "scale": [
-      0,
-      4,
-      8,
-      16,
-      24,
-      32,
-      48,
-      64
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px",
+      "96px"
     ]
   },
   "radius": {
-    "sm": 2,
-    "md": 6,
-    "lg": 12,
-    "pill": 999
+    "sm": "2px",
+    "md": "4px",
+    "lg": "8px",
+    "pill": "999px"
   },
   "motion": {
     "duration_ms": {
-      "fast": 120,
-      "base": 220,
-      "slow": 360
+      "fast": "120",
+      "base": "220",
+      "slow": "380"
     },
-    "easing": "cubic-bezier(0.2, 0, 0, 1)"
+    "easing": "cubic-bezier(0.2, 0.0, 0.0, 1.0)"
   },
   "elevation": {
-    "sm": "0 1px 2px rgba(22,24,29,.12)",
-    "md": "0 6px 20px rgba(22,24,29,.20)"
+    "sm": "0 1px 2px rgba(26,28,32,0.12), 0 1px 1px rgba(26,28,32,0.08)",
+    "md": "0 4px 8px rgba(26,28,32,0.14), 0 2px 4px rgba(26,28,32,0.10)"
   }
 }
 ```

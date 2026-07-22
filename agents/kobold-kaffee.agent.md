@@ -37,30 +37,30 @@ kanonische Werte-Quelle (identisch mit dem Profil in `brands/`).
     "secondary": "#C87941",
     "accent": "#4FBE8E",
     "neutral": {
-      "900": "#241610",
-      "700": "#4A3527",
-      "500": "#7A6555",
-      "100": "#F0E7D6",
+      "900": "#1A100B",
+      "700": "#3B2417",
+      "500": "#7A5A48",
+      "100": "#F4ECE1",
       "0": "#FFFFFF"
     },
     "semantic": {
-      "success": "#3FA76E",
-      "warning": "#D8952B",
-      "danger": "#C0472F",
-      "info": "#3E7C8C"
+      "success": "#4FBE8E",
+      "warning": "#E0A93B",
+      "danger": "#C0493B",
+      "info": "#3B7BB8"
     }
   },
   "font": {
     "heading": "Fraunces",
     "body": "Inter",
     "mono": "JetBrains Mono",
-    "fallback": "system-ui, -apple-system, Segoe UI, sans-serif",
+    "fallback": "system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
     "scale": {
-      "h1": 46,
-      "h2": 32,
-      "h3": 22,
-      "body": 16,
-      "caption": 13
+      "h1": "56px",
+      "h2": "36px",
+      "h3": "24px",
+      "body": "16px",
+      "caption": "13px"
     },
     "weight": {
       "regular": 400,
@@ -69,35 +69,36 @@ kanonische Werte-Quelle (identisch mit dem Profil in `brands/`).
     }
   },
   "space": {
-    "unit": 8,
+    "unit": "4px",
     "scale": [
-      0,
-      4,
-      8,
-      16,
-      24,
-      32,
-      48,
-      64
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px",
+      "96px"
     ]
   },
   "radius": {
-    "sm": 4,
-    "md": 8,
-    "lg": 16,
-    "pill": 999
+    "sm": "6px",
+    "md": "12px",
+    "lg": "20px",
+    "pill": "999px"
   },
   "motion": {
     "duration_ms": {
-      "fast": 150,
-      "base": 250,
-      "slow": 400
+      "fast": 160,
+      "base": 240,
+      "slow": 420
     },
-    "easing": "cubic-bezier(0.2, 0, 0, 1)"
+    "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
   },
   "elevation": {
-    "sm": "0 1px 2px rgba(36,22,16,.12)",
-    "md": "0 6px 20px rgba(36,22,16,.18)"
+    "sm": "0 1px 2px rgba(26, 16, 11, 0.08), 0 1px 3px rgba(26, 16, 11, 0.06)",
+    "md": "0 6px 12px rgba(26, 16, 11, 0.10), 0 2px 4px rgba(26, 16, 11, 0.08)"
   }
 }
 ```

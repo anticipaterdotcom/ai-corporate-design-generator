@@ -10,107 +10,145 @@ persoenlichkeit:
   - diskret
   - präzise
   - souverän
+  - zeitlos
 tags:
   - marke
   - ki
+  - generiert
 ki-agent: true
+generiert_von: generate_brand.py
 ---
 
 # Aurea Finanz
 
-Digitales Private Banking, das die Diskretion einer traditionsreichen Privatbank
-mit der Präzision moderner Vermögensverwaltung verbindet – zurückhaltend im Ton,
-kompromisslos in der Sorgfalt.
-
 ## Marken-Kern
+- **Mission:** Aurea Finanz verwahrt, mehrt und ordnet Generationenvermögen mit der Ruhe, Diskretion und Präzision einer Schweizer Privatbank – vollständig digital, vollständig persönlich.
+- **Werte:** Verlässlichkeit, Diskretion, Präzision, Langfristigkeit, Souveränität
+- **Zielgruppe:** Vermögende Privatkunden und Familien (HNWI/UHNWI), Family Offices und Stiftungen im deutschsprachigen Raum, die digitale Effizienz mit traditioneller Wertekompetenz verbinden möchten.
+- **Persönlichkeit:** premium, diskret, präzise, souverän, zeitlos
 
-- **Mission:** anspruchsvolle Vermögen digital, diskret und präzise verwalten.
-- **Werte:** Diskretion, Sorgfalt, langfristige Verantwortung, Klarheit.
-- **Zielgruppe:** vermögende Privatkund:innen, Unternehmer:innen & Family Offices.
-- **Persönlichkeit:** premium, diskret, präzise, souverän – nie protzig.
+## Farbwelt
+
+| Rolle | Name | HEX | RGB | CMYK |
+|---|---|---|---|---|
+| Primärfarbe | Mitternachtsblau | `#10203A` | 16 / 32 / 58 | 100 / 85 / 35 / 65 |
+| Sekundärfarbe | Tiefsee | `#26456E` | 38 / 69 / 110 | 90 / 65 / 25 / 25 |
+| Akzent | Aurum | `#C9A227` | 201 / 162 / 39 | 20 / 25 / 95 / 5 |
+| Neutral 900 | Tinte | `#0A1424` | 10 / 20 / 36 | 95 / 80 / 45 / 70 |
+| Neutral 700 | Schiefer | `#3D4A5C` | 61 / 74 / 92 | 70 / 55 / 35 / 30 |
+| Neutral 500 | Stein | `#8A93A2` | 138 / 147 / 162 | 50 / 35 / 25 / 10 |
+| Neutral 100 | Pergament | `#EDE9DF` | 237 / 233 / 223 | 8 / 8 / 12 / 0 |
+| Neutral 0 | Champagner | `#F7F4EC` | 247 / 244 / 236 | 4 / 3 / 6 / 0 |
+| Erfolg | Zederngrün | `#1F6B4A` | 31 / 107 / 74 | 80 / 35 / 75 / 20 |
+| Warnung | Bernstein | `#B8761F` | 184 / 118 / 31 | 20 / 50 / 100 / 15 |
+| Fehler | Bordeaux | `#8A1C2B` | 138 / 28 / 43 | 25 / 95 / 75 / 25 |
+| Info | Silbernebel | `#4A6B8A` | 74 / 107 / 138 | 65 / 40 / 25 / 15 |
+
+## Typografie
+- **Headings:** Canela (Display-Serife, schwacher Kontrast, elegante Proportionen) – geschnitten in 300, 400, 500. Größtes visuelles Differenzierungsmerkmal der Marke.
+- **Body:** Söhne (geometrische Sans, neutrale Laufweite) – geschnitten in 400, 500, 600. Sorgt für Lesbarkeit in Dashboards, Berichten und Korrespondenz.
+- **Mono:** JetBrains Mono – für Zahlen, Beträge, IBAN und Performance-Tabellen; Ziffern tabellarisch.
+- **Skalierung:** h1 48/56, h2 36/44, h3 28/36, body 16/26, caption 13/20 – Verhältnis 1,25 (Major Third), Satzweite –1 % an Headings.
+- **Paarung:** Canela nur in Headings & Zitatstellen; Söhne übernimmt alles Funktionale. Niemals beide gleichzeitig als Display.
+
+## Logo & Formensprache
+- Das Wortzeichen „AUREA“ steht in Canela 400, Kapitälchen, sehr weiter Laufweite (+120); Punkt über dem U als zarter Aurum-Akzent.
+- Mindestfreiraum um das Logo entspricht der Höhe des „U“ – niemals kleiner.
+- Formensprache: ruhige rechteckige Container, abgerundete Ecken (radius-md 12 px), hauchzarte 1-px-Linien in Neutral 500; keine Schatten, keine Verläufe, keine dekorativen Verzierungen.
+- Akzent Aurum wird ausschließlich als schmaler Strich, kleines Quadrat oder einzelner Punkt eingesetzt – niemals flächig.
+
+## Bildsprache & Tonalität
+- **Bildstil:** Reduzierte, dokumentarische Fotografie – kühle Morgenlichtstimmung, Architektur aus Stein und Glas, ruhige Hände, leise Texturen (Leinen, Marmor, Papier). Keine Stock-Smileys, keine übereinandergelegten Hände, keine Krypto-Münzen.
+- **Tonalität:** Sie-Form, knapp, gesetzt, vertrauenswürdig. Keine Superlative, keine Marketingsprache. Eine Aussage pro Absatz. Wir antworten, wie ein diskreter Bankier spricht: präzise, ohne Pathos.
+
+## Do & Don't
+> [!do] Do
+> Headings in Canela setzen, Body konsequent in Söhne – niemals mischen.
+> Akzentfarbe Aurum ausschließlich als Linie, Punkt oder kleines Quadrat verwenden.
+> Zahlen, Beträge und IBAN grundsätzlich in JetBrains Mono mit tabularen Ziffern setzen.
+> Großzügige Weißräume nutzen – mindestens 64 px Innenabstand in allen Containern.
+> Anrede durchgängig „Sie“ – auch in Microcopy, Buttons und E-Mails.
+
+> [!dont] Don't
+> Keine Verläufe, Drop-Shadows oder Glasmorphismen auf Karten und Buttons.
+> Keine Icons in Aurum flächig füllen – das verwässert die Wertanmutung.
+> Keine Headlines in GROSSBUCHSTABEN, außer im Wortzeichen selbst.
+> Keine Emojis, Ausrufezeichen oder Superlative („am besten“, „revolutionär“) in der Tonalität.
+> Keine Stock-Fotos mit Geldscheinen, Münzen oder übereinandergelegten Händen.
 
 ## Design-Tokens
 
 ```json
 {
   "color": {
-    "primary":   "#10203A",
+    "primary": "#10203A",
     "secondary": "#26456E",
-    "accent":    "#C9A227",
-    "neutral":   { "900": "#1B1712", "700": "#4A443B", "500": "#837B6E", "100": "#F2EFE9", "0": "#FFFFFF" },
-    "semantic":  { "success": "#2E7D5B", "warning": "#C8871F", "danger": "#B23A3A", "info": "#2F6FA8" }
+    "accent": "#C9A227",
+    "neutral": {
+      "900": "#0A1424",
+      "700": "#3D4A5C",
+      "500": "#8A93A2",
+      "100": "#EDE9DF",
+      "0": "#F7F4EC"
+    },
+    "semantic": {
+      "success": "#1F6B4A",
+      "warning": "#B8761F",
+      "danger": "#8A1C2B",
+      "info": "#4A6B8A"
+    }
   },
   "font": {
     "heading": "Canela",
     "body": "Söhne",
-    "mono": "Söhne Mono",
-    "fallback": "system-ui, -apple-system, Segoe UI, sans-serif",
-    "scale": { "h1": 48, "h2": 32, "h3": 22, "body": 16, "caption": 13 },
-    "weight": { "regular": 400, "medium": 500, "bold": 700 }
+    "mono": "JetBrains Mono",
+    "fallback": "ui-serif, Georgia, serif / ui-sans-serif, system-ui, sans-serif",
+    "scale": {
+      "h1": "48px",
+      "h2": "36px",
+      "h3": "28px",
+      "body": "16px",
+      "caption": "13px"
+    },
+    "weight": {
+      "regular": 400,
+      "medium": 500,
+      "bold": 600
+    }
   },
-  "space":  { "unit": 8, "scale": [0, 4, 8, 16, 24, 32, 48, 64] },
-  "radius": { "sm": 4, "md": 8, "lg": 16, "pill": 999 },
-  "motion": { "duration_ms": { "fast": 150, "base": 250, "slow": 400 }, "easing": "cubic-bezier(0.2, 0, 0, 1)" },
-  "elevation": { "sm": "0 1px 2px rgba(27,23,18,.10)", "md": "0 6px 20px rgba(27,23,18,.16)" }
+  "space": {
+    "unit": 8,
+    "scale": [
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px",
+      "96px"
+    ]
+  },
+  "radius": {
+    "sm": "4px",
+    "md": "12px",
+    "lg": "20px",
+    "pill": "999px"
+  },
+  "motion": {
+    "duration_ms": {
+      "fast": 160,
+      "base": 260,
+      "slow": 420
+    },
+    "easing": "cubic-bezier(0.22, 0.61, 0.36, 1)"
+  },
+  "elevation": {
+    "sm": "0 1px 2px rgba(10, 20, 36, 0.08)",
+    "md": "0 8px 24px rgba(10, 20, 36, 0.12)"
+  }
 }
 ```
 
-## Farbwelt
-
-| Rolle | Name | HEX | RGB | CMYK |
-| --- | --- | --- | --- | --- |
-| Primär | Nachtblau | `#10203A` | 16, 32, 58 | 72, 45, 0, 77 |
-| Sekundär | Stahlblau | `#26456E` | 38, 69, 110 | 65, 37, 0, 57 |
-| Akzent | Aureum-Gold | `#C9A227` | 201, 162, 39 | 0, 19, 81, 21 |
-| Fläche | Alabaster | `#F2EFE9` | 242, 239, 233 | 0, 1, 4, 5 |
-
-Werte kanonisch im JSON oben · Regeln → Farben.
-
-## Typografie
-
-- **Headline:** Canela (elegante Serifen-Display, würdevoll), für Titel & Zahlen.
-- **Body:** Söhne (sachliche Grotesk, klar lesbar), Fallback `system-ui`.
-- **Skala:** H1 48 / H2 32 / Body 16 px, Zeilenhöhe Body 1.5.
-- Bezug → Typografie.
-
-## Logo & Formensprache
-
-- Serifen-Wortmarke „Aurea" mit fein gesetztem Gold-Akzent am „A"-Scheitel.
-- Schutzraum = Höhe des „A"; Mindestbreite 26 mm / 104 px.
-- Bevorzugt Nachtblau auf Alabaster oder Alabaster auf Nachtblau.
-- Formensprache: schmale Linien, präzise Winkel, dezente Gold-Haarlinien.
-- Regeln → Logo · Grafische Elemente.
-
-## Bildsprache & Tonalität
-
-- **Bildstil:** reduziert, hochwertig, Materialität (Papier, gebürstetes Metall,
-  gerichtetes Licht); Nahaufnahmen von Struktur & Oberfläche statt Menschen –
-  keine Klischee-Business-Handshakes, keine Stockfoto-Konferenzen.
-- **Tonalität:** souverän, diskret, präzise; **Sie**; ruhige, exakte Sätze; keine
-  Superlative, keine Rendite-Versprechen, kein Reichtums-Prahlen.
-- **`bild_prompt_bausteine`:** „minimal premium still life, fine paper texture,
-  brushed metal and subtle gold detail, soft directional light, deep navy
-  background, restrained elegant composition, macro material focus, photographic,
-  no text, no people, no handshakes".
-
-## Do & Don't
-
-> [!do] Do
-> Nachtblau als ruhige, souveräne Basis, Gold **nur** als Akzent (Linie, Detail,
-> Highlight). Alabaster als Fläche. Kontrast Text/Fläche prüfen. Sachlich bleiben.
-
-> [!dont] Don't
-> Kein flächiges Gold, keine Reichtums-Klischees (Luxusautos, Zigarren,
-> Handshakes), keine Rendite-Versprechen, nie du/Sie mischen.
-
-## Agent-Anweisungen
-
-- **Text:** Anrede **Sie**. Souverän, diskret, präzise. Claim wörtlich:
-  „Ihr Vermögen, in ruhiger Hand." Keine Superlative, keine Renditegarantien.
-- **UI:** Tokens aus JSON als CSS-Variablen. `color.primary` für Flächen/Header,
-  `color.accent` nur für Akzente & Call-to-Action, nie flächig. Radien `md`.
-  Kontrast gegen Barrierefreiheit prüfen (Weiß auf `#10203A` ≈ 16:1 ✓,
-  Gold auf `#10203A` ≈ 6.7:1 ✓).
-- **Bild:** `bild_prompt_bausteine` verwenden; niemals Text ins Bild rendern.
-
-Verwandt: Farben · Typografie · Design-Tokens · _Marken-Index
+Verwandt: [[Farben]] · [[Typografie]] · [[Design-Tokens]] · [[Barrierefreiheit]] · [[_Marken-Index]]

@@ -37,30 +37,30 @@ kanonische Werte-Quelle (identisch mit dem Profil in `brands/`).
     "secondary": "#E0338C",
     "accent": "#F5A623",
     "neutral": {
-      "900": "#14091F",
-      "700": "#3A3145",
-      "500": "#6B6377",
-      "100": "#EFEAF4",
+      "900": "#15121F",
+      "700": "#2A2640",
+      "500": "#7A7491",
+      "100": "#F2EFF7",
       "0": "#FFFFFF"
     },
     "semantic": {
-      "success": "#2FB479",
-      "warning": "#F0A32A",
-      "danger": "#E0433B",
-      "info": "#7B5BD6"
+      "success": "#1FB57A",
+      "warning": "#F5A623",
+      "danger": "#E5333C",
+      "info": "#2D7BE5"
     }
   },
   "font": {
     "heading": "Clash Display",
     "body": "Inter",
     "mono": "JetBrains Mono",
-    "fallback": "system-ui, -apple-system, Segoe UI, sans-serif",
+    "fallback": "General Sans, Helvetica Neue, Arial, sans-serif",
     "scale": {
-      "h1": 48,
-      "h2": 32,
-      "h3": 22,
-      "body": 16,
-      "caption": 13
+      "h1": "64px",
+      "h2": "44px",
+      "h3": "28px",
+      "body": "17px",
+      "caption": "13px"
     },
     "weight": {
       "regular": 400,
@@ -69,35 +69,36 @@ kanonische Werte-Quelle (identisch mit dem Profil in `brands/`).
     }
   },
   "space": {
-    "unit": 8,
+    "unit": 4,
     "scale": [
-      0,
-      4,
-      8,
-      16,
-      24,
-      32,
-      48,
-      64
+      "4px",
+      "8px",
+      "12px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px",
+      "96px"
     ]
   },
   "radius": {
-    "sm": 4,
-    "md": 8,
-    "lg": 16,
-    "pill": 999
+    "sm": "8px",
+    "md": "16px",
+    "lg": "24px",
+    "pill": "999px"
   },
   "motion": {
     "duration_ms": {
       "fast": 150,
-      "base": 250,
-      "slow": 400
+      "base": 240,
+      "slow": 420
     },
-    "easing": "cubic-bezier(0.2, 0, 0, 1)"
+    "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
   },
   "elevation": {
-    "sm": "0 1px 2px rgba(20,9,31,.12)",
-    "md": "0 6px 20px rgba(20,9,31,.20)"
+    "sm": "0 2px 8px rgba(21, 18, 31, 0.12)",
+    "md": "0 12px 32px rgba(21, 18, 31, 0.18)"
   }
 }
 ```

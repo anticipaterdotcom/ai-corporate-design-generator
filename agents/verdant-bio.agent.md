@@ -19,7 +19,7 @@ kanonische Werte-Quelle (identisch mit dem Profil in `brands/`).
 - **Branche:** Naturkosmetik / Bio-Hautpflege
 - **Claim (wörtlich verwenden):** „Weniger, aber ehrlich."
 - **Anrede:** du
-- **Persönlichkeit:** minimalistisch, natürlich, ehrlich, achtsam
+- **Persönlichkeit:** minimalistisch, natürlich, ehrlich, achtsam, klar
 
 ## Regeln
 - **Text:** Anrede „du" konsequent. Claim nur im obigen Wortlaut.
@@ -37,35 +37,35 @@ kanonische Werte-Quelle (identisch mit dem Profil in `brands/`).
     "secondary": "#C9B29B",
     "accent": "#B5714E",
     "neutral": {
-      "900": "#2E251C",
-      "700": "#5C4F42",
-      "500": "#8A7E70",
-      "100": "#F5F1E8",
+      "900": "#2E2A23",
+      "700": "#5A5448",
+      "500": "#8A8275",
+      "100": "#F2EEE6",
       "0": "#FFFFFF"
     },
     "semantic": {
-      "success": "#5E8C5A",
-      "warning": "#C9922E",
-      "danger": "#B4574A",
-      "info": "#5A7D8C"
+      "success": "#5C7A4E",
+      "warning": "#C89B3C",
+      "danger": "#A0432F",
+      "info": "#6B8A8E"
     }
   },
   "font": {
-    "heading": "Cormorant Garamond",
-    "body": "Source Sans 3",
-    "mono": "Source Code Pro",
-    "fallback": "system-ui, -apple-system, Segoe UI, sans-serif",
+    "heading": "Cormorant Garamond, 'EB Garamond', Georgia, serif",
+    "body": "'Source Sans 3', Inter, system-ui, sans-serif",
+    "mono": "'JetBrains Mono', ui-monospace, monospace",
+    "fallback": "Georgia, 'Times New Roman', serif",
     "scale": {
-      "h1": 46,
-      "h2": 30,
-      "h3": 22,
-      "body": 16,
-      "caption": 13
+      "h1": "3.5rem",
+      "h2": "2.5rem",
+      "h3": "1.75rem",
+      "body": "1rem",
+      "caption": "0.8125rem"
     },
     "weight": {
       "regular": 400,
       "medium": 500,
-      "bold": 700
+      "bold": 600
     }
   },
   "space": {
@@ -74,30 +74,32 @@ kanonische Werte-Quelle (identisch mit dem Profil in `brands/`).
       0,
       4,
       8,
+      12,
       16,
       24,
       32,
       48,
-      64
+      64,
+      96
     ]
   },
   "radius": {
-    "sm": 4,
-    "md": 8,
-    "lg": 16,
+    "sm": 6,
+    "md": 12,
+    "lg": 24,
     "pill": 999
   },
   "motion": {
     "duration_ms": {
-      "fast": 150,
-      "base": 250,
-      "slow": 400
+      "fast": 160,
+      "base": 240,
+      "slow": 420
     },
-    "easing": "cubic-bezier(0.2, 0, 0, 1)"
+    "easing": "cubic-bezier(0.22, 0.61, 0.36, 1)"
   },
   "elevation": {
-    "sm": "0 1px 2px rgba(46,37,28,.08)",
-    "md": "0 6px 20px rgba(46,37,28,.14)"
+    "sm": "0 1px 2px rgba(46,42,35,0.08), 0 1px 1px rgba(46,42,35,0.04)",
+    "md": "0 6px 18px rgba(46,42,35,0.10), 0 2px 6px rgba(46,42,35,0.06)"
   }
 }
 ```

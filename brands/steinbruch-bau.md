@@ -13,102 +13,136 @@ persoenlichkeit:
 tags:
   - marke
   - ki
+  - generiert
 ki-agent: true
+generiert_von: generate_brand.py
 ---
 
 # Steinbruch Bau
 
-Hoch- und Tiefbauunternehmen, das Solidität ausstrahlt und die Härte des Materials
-mit der Klarheit eines sauberen Bauplans verbindet.
-
 ## Marken-Kern
+- **Mission:** Steinbruch Bau plant, errichtet und saniert Bauwerke mit der Beständigkeit von Naturstein – präzise Ingenieurskunst, die Generationen überdauert.
+- **Werte:** Bodenständigkeit, Robustheit, Klarheit, Verlässlichkeit, Handwerklichkeit
+- **Zielgruppe:** Öffentliche Auftraggeber, kommunale Bauherren, Projektentwickler und industrielle Investoren im Hoch- und Tiefbau (Entscheider, 35–65 Jahre)
+- **Persönlichkeit:** bodenständig, robust, klar, verlässlich
 
-- **Mission:** Bauwerke schaffen, die Generationen tragen – termintreu, sauber und ehrlich kalkuliert.
-- **Werte:** Verlässlichkeit, Sicherheit, handwerkliche Qualität, Wort gilt.
-- **Zielgruppe:** öffentliche Auftraggeber, Bauträger & Industrie im Hoch- und Tiefbau.
-- **Persönlichkeit:** bodenständig, robust, klar, verlässlich – nie großspurig.
+## Farbwelt
+
+| Rolle | Name | HEX | RGB | CMYK |
+|---|---|---|---|---|
+| Primär | Schiefergrau | `#4A4E54` | 74 / 78 / 84 | 50 / 40 / 35 / 60 |
+| Sekundär | Tiefbasalt | `#1C1E22` | 28 / 30 / 34 | 80 / 70 / 60 / 80 |
+| Akzent | Quarzit-Gelb | `#F2C200` | 242 / 194 / 0 | 0 / 20 / 100 / 0 |
+| Hellton | Kalkweiss | `#F4F2EC` | 244 / 242 / 236 | 3 / 3 / 6 / 0 |
+| Funktionsfarbe Erfolg | Moosgrün | `#5A7A4E` | 90 / 122 / 78 | 50 / 25 / 70 / 30 |
+| Funktionsfarbe Warnung | Lehmorange | `#D9822B` | 217 / 130 / 43 | 10 / 55 / 95 / 5 |
+
+## Typografie
+
+- **Headings:** Aktiv Grotesk – geometrisch, technisch, mit kompromissloser Klarheit. Eng gesetzt, mittlere bis fette Gewichte.
+- **Body:** Inter – optimierte Lesbarkeit am Bildschirm und im Druck, ruhiger Rhythmus für lange Fachtexte.
+- **Hierarchie:** H1 56/60 · H2 40/46 · H3 28/34 · Body 16/26 · Caption 13/18.
+- **Sonderfälle:** Zahlen und technische Masse grundsätzlich in `Inter` tabular, niemals in einer dekorativen Schrift.
+
+## Logo & Formensprache
+
+- Wortmarke „Steinbruch Bau" in Aktiv Grotesk Bold, Buchstabenabstand +20, ausschliesslich in Schiefergrau, Tiefbasalt oder Kalkweiss.
+- Begleitendes Signet: Quadrat mit abgeschnittener Ecke als stilisierter Quaderbruch – niemals frei stehend ohne Wortmarke.
+- Minimaler Schutzraum um das Logo entspricht der Höhe des „S" in „Steinbruch" in alle Richtungen.
+- Geometrische Formen: harte Kanten, Quadrate, Rechtecke im 4-mm-Raster; keine runden Verläufe, keine Verzierungen.
+
+## Bildsprache & Tonalität
+
+- **Bildstil:** Dokumentarisch, ehrlich, mit Tageslicht. Rohbau, Beton, Naturstein, Werkzeuge, Hände, Baustellen bei Arbeit. Warme Sättigung, kühler Schatten.
+- **Tonalität:** Sachlich, kompetent, respektvoll im Sie, ohne Marketing-Pathos. Kurze Sätze, konkrete Zahlen, klare Zusagen.
+
+## Do & Don't
+
+> [!do] Do
+> Quarzit-Gelb ausschliesslich für Akzente, Sicherheitsmarkierungen und Call-to-Action-Elemente verwenden.
+> Auf allen Drucksachen einen einfarbigen Hintergrund (Schiefergrau oder Kalkweiss) einsetzen, nie Verläufe.
+> Bildmotive zeigen reale Bauprozesse mit erkennbaren Personen und Massstab.
+> Siezen konsequent durchhalten, auch in Social-Media-Antworten und auf Baustellenbeschilderungen.
+> Schriftkombination Aktiv Grotesk / Inter ohne Dekorschriften verwenden.
+
+> [!dont] Don't
+> Keine Stockfotos mit lächelnden Models in Hardhüten ohne Bezug zur eigenen Baustelle einsetzen.
+> Quarzit-Gelb nicht als Hintergrund für lange Textblöcke verwenden – es ist eine Akzentfarbe.
+> Keine Rundungen, Schatten oder 3D-Effekte in Logos, Icons oder Headern.
+> Nicht von „Steinbruch Bau" ohne den abgeschnittenen Quader als Signet-Variante sprechen.
+> Keine Helvetica, Arial oder Roboto als Ersatz für Aktiv Grotesk / Inter verwenden.
 
 ## Design-Tokens
 
 ```json
 {
   "color": {
-    "primary":   "#4A4E54",
+    "primary": "#4A4E54",
     "secondary": "#1C1E22",
-    "accent":    "#F2C200",
-    "neutral":   { "900": "#14161A", "700": "#3A3D42", "500": "#6A6E75", "100": "#E8E9EB", "0": "#FFFFFF" },
-    "semantic":  { "success": "#3E8E41", "warning": "#E0A22B", "danger": "#C0392B", "info": "#2E7BC4" }
+    "accent": "#F2C200",
+    "neutral": {
+      "900": "#1C1E22",
+      "700": "#3A3D42",
+      "500": "#6E7075",
+      "100": "#F4F2EC",
+      "0": "#FFFFFF"
+    },
+    "semantic": {
+      "success": "#5A7A4E",
+      "warning": "#D9822B",
+      "danger": "#B23A2A",
+      "info": "#3A6B8A"
+    }
   },
   "font": {
     "heading": "Aktiv Grotesk",
     "body": "Inter",
-    "mono": "IBM Plex Mono",
-    "fallback": "system-ui, -apple-system, Segoe UI, sans-serif",
-    "scale": { "h1": 46, "h2": 32, "h3": 22, "body": 16, "caption": 13 },
-    "weight": { "regular": 400, "medium": 500, "bold": 700 }
+    "mono": "JetBrains Mono",
+    "fallback": "Aktiv Grotesk, Inter, Helvetica Neue, sans-serif",
+    "scale": {
+      "h1": "56px",
+      "h2": "40px",
+      "h3": "28px",
+      "body": "16px",
+      "caption": "13px"
+    },
+    "weight": {
+      "regular": "400",
+      "medium": "500",
+      "bold": "700"
+    }
   },
-  "space":  { "unit": 8, "scale": [0, 4, 8, 16, 24, 32, 48, 64] },
-  "radius": { "sm": 2, "md": 4, "lg": 8, "pill": 999 },
-  "motion": { "duration_ms": { "fast": 150, "base": 250, "slow": 400 }, "easing": "cubic-bezier(0.2, 0, 0, 1)" },
-  "elevation": { "sm": "0 1px 2px rgba(20,22,26,.12)", "md": "0 6px 20px rgba(20,22,26,.20)" }
+  "space": {
+    "unit": "8px",
+    "scale": [
+      "8px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px",
+      "96px"
+    ]
+  },
+  "radius": {
+    "sm": "0px",
+    "md": "2px",
+    "lg": "4px",
+    "pill": "999px"
+  },
+  "motion": {
+    "duration_ms": {
+      "fast": "150",
+      "base": "240",
+      "slow": "400"
+    },
+    "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+  },
+  "elevation": {
+    "sm": "0 1px 2px rgba(28, 30, 34, 0.12)",
+    "md": "0 4px 12px rgba(28, 30, 34, 0.18)"
+  }
 }
 ```
 
-## Farbwelt
-
-| Rolle | Name | HEX | RGB | CMYK |
-| --- | --- | --- | --- | --- |
-| Primär | Beton-Grau | `#4A4E54` | 74, 78, 84 | 12, 7, 0, 67 |
-| Sekundär | Stahl-Anthrazit | `#1C1E22` | 28, 30, 34 | 17, 11, 0, 87 |
-| Akzent | Baustellen-Gelb | `#F2C200` | 242, 194, 0 | 0, 20, 100, 5 |
-| Fläche | Betonweiß | `#E8E9EB` | 232, 233, 235 | 1, 1, 0, 8 |
-
-Werte kanonisch im JSON oben · Regeln → Farben.
-
-## Typografie
-
-- **Headline:** Aktiv Grotesk, industrielle Grotesk, gern in **Versalien**, Fallback `system-ui`.
-- **Body:** Inter (robuste Sans), ruhig und gut lesbar; Bezug → Typografie.
-- **Skala:** H1 46 / H2 32 / Body 16 px, Zeilenhöhe Body 1.5, Laufweite Versalien +2 %.
-
-## Logo & Formensprache
-
-- Wortmarke in Versalien, kantig gesetzt, mit gebrochener Bruchkante als Bildzeichen.
-- Schutzraum = Höhe des „S"; Mindestbreite 24 mm / 96 px.
-- Bevorzugt Beton-Grau auf Betonweiß oder Betonweiß auf Stahl-Anthrazit.
-- Formensprache: rechte Winkel, klare Kanten, Diagonalstreifen (Warnband) nur als Akzent.
-- Regeln → Logo · Grafische Elemente.
-
-## Bildsprache & Tonalität
-
-- **Bildstil:** echte Baustellen, Material (Beton, Stahl, Holz), Struktur & Textur,
-  Menschen bei der Arbeit; ehrlich, kräftig, natürliches Licht statt Studio-Glanz.
-- **Tonalität:** sachlich-handfest, klar, verlässlich; **Sie**; kurze, direkte Sätze;
-  keine Superlative, keine Hochglanz-Klischees, keine Angst-Rhetorik.
-- **`bild_prompt_bausteine`:** „real construction site, raw concrete and steel and
-  timber, close-up material texture, workers in action, honest documentary style,
-  natural daylight, concrete-grey palette with a single safety-yellow accent,
-  photographic, no text".
-
-## Do & Don't
-
-> [!do] Do
-> Beton-Grau und Anthrazit als solide Basis, Baustellen-Gelb nur als **Akzent** auf
-> Dunkel/Schwarz (Buttons, Warnband, Highlights). Kontrast Text/Fläche prüfen.
-
-> [!dont] Don't
-> Kein Gelb als Textfarbe auf Weiß (zu geringer Kontrast), keine gestockten
-> Klischeebilder, kein Marketing-Sprech, nie du/Sie mischen.
-
-## Agent-Anweisungen
-
-- **Text:** Anrede **Sie**. Handfest, klar, verlässlich. Claim wörtlich:
-  „Auf Fels gebaut." Keine Superlative, keine Angst- oder Schuld-Rhetorik.
-- **UI:** Tokens aus JSON als CSS-Variablen. `color.primary`/`secondary` für Flächen
-  & Header, `color.accent` nur für Call-to-Action & Highlights – Gelb stets mit
-  dunklem Text (`neutral.900`), nie als Text auf Weiß. Radien `sm`/`md` (kantig).
-  Kontrast gegen Barrierefreiheit prüfen (Weiß auf `#4A4E54` ≈ 8:1 ✓,
-  `#14161A` auf `#F2C200` ≈ 12:1 ✓).
-- **Bild:** `bild_prompt_bausteine` verwenden; niemals Text ins Bild rendern.
-
-Verwandt: Farben · Typografie · Design-Tokens · Logo · Anwendungen · Barrierefreiheit · _Marken-Index
+Verwandt: [[Farben]] · [[Typografie]] · [[Design-Tokens]] · [[Barrierefreiheit]] · [[_Marken-Index]]

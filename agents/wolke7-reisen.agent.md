@@ -19,7 +19,7 @@ kanonische Werte-Quelle (identisch mit dem Profil in `brands/`).
 - **Branche:** Reise-Buchungsplattform / Online-Reisebüro
 - **Claim (wörtlich verwenden):** „Ab auf Wolke 7."
 - **Anrede:** du
-- **Persönlichkeit:** freundlich, luftig, optimistisch, unkompliziert
+- **Persönlichkeit:** freundlich, luftig, optimistisch, unkompliziert, verlässlich
 
 ## Regeln
 - **Text:** Anrede „du" konsequent. Claim nur im obigen Wortlaut.
@@ -37,43 +37,43 @@ kanonische Werte-Quelle (identisch mit dem Profil in `brands/`).
     "secondary": "#FDE9CE",
     "accent": "#FF6F61",
     "neutral": {
-      "900": "#0D2C40",
-      "700": "#3A5A70",
-      "500": "#6E8697",
-      "100": "#EAF4FA",
+      "900": "#0E2A47",
+      "700": "#2B2D33",
+      "500": "#7A8190",
+      "100": "#E5EBF2",
       "0": "#FFFFFF"
     },
     "semantic": {
-      "success": "#2FBF71",
-      "warning": "#F5A623",
-      "danger": "#D64535",
-      "info": "#2E7BC4"
+      "success": "#3CB371",
+      "warning": "#E8A33D",
+      "danger": "#D7263D",
+      "info": "#5BA8D6"
     }
   },
   "font": {
     "heading": "Nunito",
     "body": "Nunito",
     "mono": "JetBrains Mono",
-    "fallback": "system-ui, -apple-system, Segoe UI, sans-serif",
+    "fallback": "ui-rounded, \"Quicksand\", \"Segoe UI\", system-ui, sans-serif",
     "scale": {
-      "h1": 46,
-      "h2": 32,
-      "h3": 22,
-      "body": 16,
-      "caption": 13
+      "h1": "2.75rem",
+      "h2": "2rem",
+      "h3": "1.5rem",
+      "body": "1rem",
+      "caption": "0.8125rem"
     },
     "weight": {
       "regular": 400,
-      "medium": 500,
-      "bold": 700
+      "medium": 600,
+      "bold": 800
     }
   },
   "space": {
-    "unit": 8,
+    "unit": 4,
     "scale": [
-      0,
       4,
       8,
+      12,
       16,
       24,
       32,
@@ -82,22 +82,22 @@ kanonische Werte-Quelle (identisch mit dem Profil in `brands/`).
     ]
   },
   "radius": {
-    "sm": 6,
+    "sm": 8,
     "md": 12,
     "lg": 20,
     "pill": 999
   },
   "motion": {
     "duration_ms": {
-      "fast": 150,
-      "base": 250,
-      "slow": 400
+      "fast": 120,
+      "base": 220,
+      "slow": 380
     },
-    "easing": "cubic-bezier(0.2, 0, 0, 1)"
+    "easing": "cubic-bezier(0.22, 0.61, 0.36, 1)"
   },
   "elevation": {
-    "sm": "0 1px 2px rgba(13,44,64,.10)",
-    "md": "0 6px 20px rgba(13,44,64,.16)"
+    "sm": "0 2px 6px rgba(14,42,71,0.08)",
+    "md": "0 10px 24px rgba(14,42,71,0.12)"
   }
 }
 ```

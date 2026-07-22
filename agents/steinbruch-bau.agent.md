@@ -37,67 +37,66 @@ kanonische Werte-Quelle (identisch mit dem Profil in `brands/`).
     "secondary": "#1C1E22",
     "accent": "#F2C200",
     "neutral": {
-      "900": "#14161A",
+      "900": "#1C1E22",
       "700": "#3A3D42",
-      "500": "#6A6E75",
-      "100": "#E8E9EB",
+      "500": "#6E7075",
+      "100": "#F4F2EC",
       "0": "#FFFFFF"
     },
     "semantic": {
-      "success": "#3E8E41",
-      "warning": "#E0A22B",
-      "danger": "#C0392B",
-      "info": "#2E7BC4"
+      "success": "#5A7A4E",
+      "warning": "#D9822B",
+      "danger": "#B23A2A",
+      "info": "#3A6B8A"
     }
   },
   "font": {
     "heading": "Aktiv Grotesk",
     "body": "Inter",
-    "mono": "IBM Plex Mono",
-    "fallback": "system-ui, -apple-system, Segoe UI, sans-serif",
+    "mono": "JetBrains Mono",
+    "fallback": "Aktiv Grotesk, Inter, Helvetica Neue, sans-serif",
     "scale": {
-      "h1": 46,
-      "h2": 32,
-      "h3": 22,
-      "body": 16,
-      "caption": 13
+      "h1": "56px",
+      "h2": "40px",
+      "h3": "28px",
+      "body": "16px",
+      "caption": "13px"
     },
     "weight": {
-      "regular": 400,
-      "medium": 500,
-      "bold": 700
+      "regular": "400",
+      "medium": "500",
+      "bold": "700"
     }
   },
   "space": {
-    "unit": 8,
+    "unit": "8px",
     "scale": [
-      0,
-      4,
-      8,
-      16,
-      24,
-      32,
-      48,
-      64
+      "8px",
+      "16px",
+      "24px",
+      "32px",
+      "48px",
+      "64px",
+      "96px"
     ]
   },
   "radius": {
-    "sm": 2,
-    "md": 4,
-    "lg": 8,
-    "pill": 999
+    "sm": "0px",
+    "md": "2px",
+    "lg": "4px",
+    "pill": "999px"
   },
   "motion": {
     "duration_ms": {
-      "fast": 150,
-      "base": 250,
-      "slow": 400
+      "fast": "150",
+      "base": "240",
+      "slow": "400"
     },
-    "easing": "cubic-bezier(0.2, 0, 0, 1)"
+    "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
   },
   "elevation": {
-    "sm": "0 1px 2px rgba(20,22,26,.12)",
-    "md": "0 6px 20px rgba(20,22,26,.20)"
+    "sm": "0 1px 2px rgba(28, 30, 34, 0.12)",
+    "md": "0 4px 12px rgba(28, 30, 34, 0.18)"
   }
 }
 ```

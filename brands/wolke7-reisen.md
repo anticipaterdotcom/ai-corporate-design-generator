@@ -10,104 +10,146 @@ persoenlichkeit:
   - luftig
   - optimistisch
   - unkompliziert
+  - verlässlich
 tags:
   - marke
   - ki
+  - generiert
 ki-agent: true
+generiert_von: generate_brand.py
 ---
 
 # Wolke7 Reisen
 
-Leichtfüßige Online-Reiseplattform, die das Buchen so unbeschwert macht wie den
-ersten Blick aus dem Flugzeugfenster – heller Himmel, gute Laune, kein Ballast.
-
 ## Marken-Kern
+- **Mission:** Reisen so leicht machen wie das Liegen auf einer Wolke – von der Inspiration bis zur Buchung in wenigen Momenten.
+- **Werte:** Leichtigkeit, Vertrauen, Klarheit, Herzlichkeit, Neugier
+- **Zielgruppe:** Reiselustige zwischen 25 und 55 Jahren, die unkompliziert und digital Städte, Strände und Natur entdecken wollen.
+- **Persönlichkeit:** freundlich, luftig, optimistisch, unkompliziert, verlässlich
 
-- **Mission:** Reisen für alle einfach, transparent und in Minuten buchbar machen.
-- **Werte:** Leichtigkeit, Ehrlichkeit, Vorfreude, Nahbarkeit.
-- **Zielgruppe:** spontane Städtereisende, Familien & Paare, die unkompliziert los wollen.
-- **Persönlichkeit:** freundlich, luftig, optimistisch, unkompliziert – nie aufdringlich.
+## Farbwelt
+
+| Rolle | Name | HEX | RGB | CMYK |
+| --- | --- | --- | --- | --- |
+| Primär | Wolkenblau | `#2FA8E0` | 47, 168, 224 | 79, 25, 0, 12 |
+| Sekundär | Sonnencreme | `#FDE9CE` | 253, 233, 206 | 2, 8, 19, 1 |
+| Akzent | Koffeinrot | `#FF6F61` | 255, 111, 97 | 0, 57, 62, 0 |
+| Tiefenhimmel | Mitternachtsblau | `#0E2A47` | 14, 42, 71 | 81, 41, 0, 72 |
+| Text | Anthrazitwolke | `#2B2D33` | 43, 45, 51 | 16, 12, 0, 80 |
+| Hintergrund | Porzellanweiß | `#FFFFFF` | 255, 255, 255 | 0, 0, 0, 0 |
+| Erfolg | Palmengrün | `#3CB371` | 60, 179, 113 | 47, 0, 37, 30 |
+| Warnung | Bernsteinsonne | `#E8A33D` | 232, 163, 61 | 0, 30, 74, 9 |
+| Fehler | Signalrot | `#D7263D` | 215, 38, 61 | 0, 82, 72, 16 |
+| Info | Lagunenblau | `#5BA8D6` | 91, 168, 214 | 57, 21, 0, 16 |
+
+## Typografie
+
+**Heading:** Nunito, Fallback `ui-rounded, "Quicksand", "Segoe UI", system-ui, sans-serif`
+**Body:** Nunito, Fallback `ui-rounded, "Quicksand", "Segoe UI", system-ui, sans-serif`
+**Mono (für Buchungscodes, IDs):** `"JetBrains Mono", ui-monospace, "SFMono-Regular", monospace`
+
+Skala (rem): H1 2.75 · H2 2 · H3 1.5 · Body 1 · Caption 0.8125. Gewichte: regular 400, medium 600, bold 800. Headings fallen durch das freundlich-runde `Nunito` auf; Lauftext bleibt in 400/600 für hohe Lesbarkeit.
+
+## Logo & Formensprache
+
+- Das Logo kombiniert die Wortmarke "Wolke7" mit einer stilisierten Wolkenform, deren rechter Bogen zu einer aufsteigenden "7" ausläuft – niemals getrennt, immer mit 0,75× Wortmarkenhöhe als Schutzraum.
+- Primärlogo in Wolkenblau auf Porzellanweiß, invertiert in Porzellanweiß auf Mitternachtsblau. Akzentfarbe nur als kleines Highlight im Wolkenbogen erlaubt.
+- Ecken konsequent rund: Karten radius-lg, Buttons radius-pill, Eingabefelder radius-md. Scharfe Kanten nur in Datentabellen.
+- Minimalistische Iconografie mit gleichmäßigem 1,5-px-Strich, gefüllte Akzente nur in Koffeinrot für aktive Zustände.
+
+## Bildsprache & Tonalität
+
+- **Bildstil:** Helles, natürliches Tageslicht; sanfte Aufsicht auf Reiseziele mit Himmel im oberen Drittel; Wolkenformationen als verbindendes Stilelement über alle Motive; warme, leicht entsättigte Farben mit blauer und cremefarbener Dominanz; echte Menschen, kein Stock-Look.
+- **Tonalität:** Wir sprechen unsere Reisenden mit "du" an, warm, kurz, mit einem Augenzwinkern – Sätze wie "Pack die Sonnencreme ein" oder "Dein Trip nach Lissabon wartet schon". Keine Floskeln, keine Imperative im Befehlston.
+
+## Do & Don't
+
+> [!do] Do
+> Setze Wolkenblau als Hauptfarbe auf allen Buchungsflächen ein, damit der "Wolke-7"-Moment sofort spürbar wird.
+> Runde Radien (mind. 8 px) bei Karten, Buttons und Eingabefeldern – die Formensprache bleibt weich und einladend.
+> Fotografiere Reiseziele mit sichtbarem Himmel und echten Reisenden, um Leichtigkeit und Glaubwürdigkeit zu verbinden.
+> Nutze Sonnencreme als großzügige Hintergrundfläche in Onboarding- und Inspirations-Bereichen, um Wärme zu erzeugen.
+> Behalte eine klare Hierarchie: eine Akzentfarbe pro Bildschirm, mehr lenkt ab und unterbricht den ruhigen Wolken-Look.
+
+> [!dont] Don't
+> Verwende die Markenfarben nicht auf grellen, hochgesättigten Stockfotos – das bricht die sanfte Tonalität der Marke.
+> Setze Koffeinrot nicht als Flächenfarbe ein, sondern ausschließlich als sparsames Highlight für aktive Zustände oder kleine Akzente.
+> Vermeide eckige Formen, harte Schatten oder Glasmorphismen – sie passen nicht zur leichten, luftigen Markenwelt.
+> Schreibe nicht in der Sie-Form und vermeide reißerische Slogans wie "Billigste Reise!" – der Ton bleibt freundlich und augenzwinkernd.
+> Überlade das Logo nicht mit Effekten, Verläufen oder Schatten – das Logo wirkt am besten in seiner klaren, runden Form.
 
 ## Design-Tokens
 
 ```json
 {
   "color": {
-    "primary":   "#2FA8E0",
+    "primary": "#2FA8E0",
     "secondary": "#FDE9CE",
-    "accent":    "#FF6F61",
-    "neutral":   { "900": "#0D2C40", "700": "#3A5A70", "500": "#6E8697", "100": "#EAF4FA", "0": "#FFFFFF" },
-    "semantic":  { "success": "#2FBF71", "warning": "#F5A623", "danger": "#D64535", "info": "#2E7BC4" }
+    "accent": "#FF6F61",
+    "neutral": {
+      "900": "#0E2A47",
+      "700": "#2B2D33",
+      "500": "#7A8190",
+      "100": "#E5EBF2",
+      "0": "#FFFFFF"
+    },
+    "semantic": {
+      "success": "#3CB371",
+      "warning": "#E8A33D",
+      "danger": "#D7263D",
+      "info": "#5BA8D6"
+    }
   },
   "font": {
     "heading": "Nunito",
     "body": "Nunito",
     "mono": "JetBrains Mono",
-    "fallback": "system-ui, -apple-system, Segoe UI, sans-serif",
-    "scale": { "h1": 46, "h2": 32, "h3": 22, "body": 16, "caption": 13 },
-    "weight": { "regular": 400, "medium": 500, "bold": 700 }
+    "fallback": "ui-rounded, \"Quicksand\", \"Segoe UI\", system-ui, sans-serif",
+    "scale": {
+      "h1": "2.75rem",
+      "h2": "2rem",
+      "h3": "1.5rem",
+      "body": "1rem",
+      "caption": "0.8125rem"
+    },
+    "weight": {
+      "regular": 400,
+      "medium": 600,
+      "bold": 800
+    }
   },
-  "space":  { "unit": 8, "scale": [0, 4, 8, 16, 24, 32, 48, 64] },
-  "radius": { "sm": 6, "md": 12, "lg": 20, "pill": 999 },
-  "motion": { "duration_ms": { "fast": 150, "base": 250, "slow": 400 }, "easing": "cubic-bezier(0.2, 0, 0, 1)" },
-  "elevation": { "sm": "0 1px 2px rgba(13,44,64,.10)", "md": "0 6px 20px rgba(13,44,64,.16)" }
+  "space": {
+    "unit": 4,
+    "scale": [
+      4,
+      8,
+      12,
+      16,
+      24,
+      32,
+      48,
+      64
+    ]
+  },
+  "radius": {
+    "sm": 8,
+    "md": 12,
+    "lg": 20,
+    "pill": 999
+  },
+  "motion": {
+    "duration_ms": {
+      "fast": 120,
+      "base": 220,
+      "slow": 380
+    },
+    "easing": "cubic-bezier(0.22, 0.61, 0.36, 1)"
+  },
+  "elevation": {
+    "sm": "0 2px 6px rgba(14,42,71,0.08)",
+    "md": "0 10px 24px rgba(14,42,71,0.12)"
+  }
 }
 ```
 
-## Farbwelt
-
-| Rolle | Name | HEX | RGB | CMYK |
-| --- | --- | --- | --- | --- |
-| Primär | Himmelblau | `#2FA8E0` | 47, 168, 224 | 79, 25, 0, 12 |
-| Akzent | Koralle | `#FF6F61` | 255, 111, 97 | 0, 56, 62, 0 |
-| Sekundär | Sand/Creme | `#FDE9CE` | 253, 233, 206 | 0, 8, 19, 1 |
-| Text | Dunkelblau | `#0D2C40` | 13, 44, 64 | 80, 31, 0, 75 |
-
-Werte kanonisch im JSON oben · Regeln → Farben.
-
-## Typografie
-
-- **Headline & Body:** Nunito (freundliche, leicht gerundete Sans), Fallback `system-ui`.
-- **Skala:** H1 46 / H2 32 / Body 16 px, Zeilenhöhe Body 1.5.
-- Bezug → Typografie.
-
-## Logo & Formensprache
-
-- Wortmarke „Wolke7" mit weicher Wolken-Rundung über der „7".
-- Schutzraum = Höhe der „7"; Mindestbreite 24 mm / 96 px.
-- Bevorzugt Himmelblau auf Weiß oder Weiß auf Himmelblau.
-- Formensprache: weiche Rundungen, leichte Wolken- und Bogenformen, viel Luft.
-- Regeln → Logo · Grafische Elemente.
-
-## Bildsprache & Tonalität
-
-- **Bildstil:** helle Reisemomente, Himmel/Küste/Städte, echte Menschen im Sonnenlicht,
-  viel Weite und Leichtigkeit, natürliche Farben statt Katalog-Kitsch.
-- **Tonalität:** freundlich, optimistisch, unkompliziert; **du**; kurze, luftige Sätze;
-  echte Vorfreude wecken, keine Druck- oder Angst-Rhetorik, keine Fake-Rabatte.
-- **`bild_prompt_bausteine`:** „bright travel moment, warm sunlight, open sky and
-  coastline or city, real happy people, airy weightless composition, soft sky-blue
-  and coral palette, natural light, photographic, no text".
-
-## Do & Don't
-
-> [!do] Do
-> Vorfreude wecken, Himmelblau als luftige Basis, Koralle nur als **Akzent** für
-> Call-to-Action & Highlights. Auf CTAs dunkelblauen Text nutzen und Kontrast prüfen.
-
-> [!dont] Don't
-> Kein Countdown-Druck, keine gestockten Klischee-Strandbilder, kein Fließtext auf
-> Koralle/Himmelblau, nie du/Sie mischen.
-
-## Agent-Anweisungen
-
-- **Text:** Anrede **du**. Freundlich, optimistisch, unkompliziert. Claim wörtlich:
-  „Ab auf Wolke 7." Keine Dringlichkeits- oder Angst-Rhetorik.
-- **UI:** Tokens aus JSON als CSS-Variablen. `color.primary` für Flächen/Header,
-  `color.accent` nur für Call-to-Action & Highlights. Radien `md`. Kontrast gegen
-  Barrierefreiheit prüfen: Himmelblau (≈2.7:1) und Koralle (≈2.7:1) erreichen auf
-  Weiß **nicht** 4.5:1 → nie für Fließtext; auf CTA-Flächen Dunkelblau `#0D2C40`
-  setzen (≈5.4:1 ✓), Fließtext in `neutral.900` auf Weiß (≈13:1 ✓).
-- **Bild:** `bild_prompt_bausteine` verwenden; niemals Text ins Bild rendern.
-
-Verwandt: Farben · Typografie · Design-Tokens · Bildsprache · Barrierefreiheit · _Marken-Index
+Verwandt: [[Farben]] · [[Typografie]] · [[Design-Tokens]] · [[Barrierefreiheit]] · [[_Marken-Index]]
