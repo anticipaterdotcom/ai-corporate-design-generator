@@ -13,7 +13,27 @@ export const GOOGLE_FONT_MAP = {
 
 export function resolveFamily(name) {
   if (!name) return null;
-  return GOOGLE_FONT_MAP[name] || name;
+  // KI liefert teils ganze CSS-Stacks ("X, 'Y', serif") — nur die erste Familie nehmen
+  const first = String(name).split(',')[0].trim().replace(/^['"]|['"]$/g, '');
+  return GOOGLE_FONT_MAP[first] || first;
+}
+
+// Layout-Archetyp aus der Headline-Schrift ableiten -> pro Marke ein anderes Layout,
+// nicht nur andere Farbe.
+const ARCHETYPES = {
+  editorial: ['Fraunces', 'Canela', 'Cormorant Garamond', 'Playfair Display', 'EB Garamond',
+    'Lora', 'DM Serif Display', 'Instrument Serif', 'Source Serif 4', 'Spectral'],
+  technical: ['Chakra Petch', 'Space Grotesk', 'Clash Display', 'Unbounded', 'Orbitron', 'Rajdhani', 'Sora'],
+  bold: ['Roboto Condensed', 'Archivo', 'Aktiv Grotesk', 'Oswald', 'Anton', 'Bebas Neue', 'Barlow Condensed'],
+  friendly: ['Nunito', 'Nunito Sans', 'Quicksand', 'Baloo 2', 'Fredoka', 'Poppins'],
+};
+
+export function archetype(tokens = {}) {
+  const h = String((tokens.font || {}).heading || '').split(',')[0].trim().replace(/^['"]|['"]$/g, '');
+  for (const [k, list] of Object.entries(ARCHETYPES)) {
+    if (list.includes(h)) return k;
+  }
+  return 'corporate';
 }
 
 export function googleFontsHref(families) {

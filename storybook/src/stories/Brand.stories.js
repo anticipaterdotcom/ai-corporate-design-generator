@@ -1,5 +1,5 @@
 import { currentBrand } from '../brands.js';
-import { bestOn, contrast, wcagRating, tokensToVars, resolveFamily } from '../theme.js';
+import { bestOn, contrast, wcagRating, tokensToVars, resolveFamily, archetype } from '../theme.js';
 import IMAGES from '../images.json';
 import CONTENT from '../content.json';
 
@@ -35,7 +35,9 @@ export const Guideline = (args, context) => {
   const wm = esc(b.name);
   const wm1 = esc(b.name.split(' ')[0]);
 
-  const heroBg = hero
+  const arch = archetype(t);
+  const imageHero = !['editorial', 'bold'].includes(arch);
+  const heroBg = (imageHero && hero)
     ? `background-image: linear-gradient(100deg, var(--color-primary) 0%, var(--color-primary) 30%, color-mix(in srgb, var(--color-primary) 52%, transparent) 64%, color-mix(in srgb, var(--color-primary) 8%, transparent) 100%), url('${hero}'); background-size: cover; background-position: center right;`
     : '';
 
@@ -92,7 +94,7 @@ export const Guideline = (args, context) => {
   const dl = (t2, s2, ic, href, attr) => `<a class="dl" href="${href}" ${attr}><div class="ic2">${ic}</div><div><div class="t">${t2}</div><div class="s">${s2}</div></div></a>`;
 
   return `
-  <section class="hero" style="${heroBg}">
+  <section class="hero" data-arch="${arch}" style="${heroBg}">
     <div class="hero__accent"></div>
     <div class="hero__grip stack">
       <p class="eyebrow">${esc(b.branche)} · Brand Guidelines</p>
@@ -100,10 +102,11 @@ export const Guideline = (args, context) => {
       <p class="lead">${claim}</p>
       <div class="row" style="margin-top:12px">
         <a class="btn btn--accent btn--lg" href="${kitHref}" download="${b.slug}-brand-kit.json">Download kit</a>
-        <a class="btn btn--lg" href="#contents" style="background:transparent;color:var(--on-primary);border-color:color-mix(in srgb,var(--on-primary) 45%,transparent)">Contents</a>
+        <a class="btn btn--lg" href="#contents" style="${arch === 'editorial' ? 'background:transparent;color:var(--ink);border-color:color-mix(in srgb,var(--ink) 30%,transparent)' : 'background:transparent;color:var(--on-primary);border-color:color-mix(in srgb,var(--on-primary) 45%,transparent)'}">Contents</a>
       </div>
     </div>
   </section>
+  ${arch === 'editorial' && hero ? `<div class="editorial-band" style="background-image:url('${hero}')"></div>` : ''}
 
   <section class="band" id="contents"><div class="wrap stack">
     <p class="eyebrow">Contents</p><div class="toc">${toc}</div>
@@ -116,7 +119,7 @@ export const Guideline = (args, context) => {
         <div class="stack"><p class="eyebrow">Mission</p><p class="statement">${esc(ct.mission) || esc(b.positioning) || claim}</p></div>
         <div>
           ${ct.zielgruppe ? `<div class="factline"><div class="k">Audience</div><div class="v">${esc(ct.zielgruppe)}</div></div>` : ''}
-          <div class="factline"><div class="k">Positioning</div><div class="v">${esc(b.positioning) || claim}</div></div>
+          <div class="factline"><div class="k">Positioning</div><div class="v">${esc((b.positioning || '').replace(/^[-*]\s*\*\*[^*]*\*\*:?\s*/, '').trim()) || claim}</div></div>
           <div class="factline"><div class="k">Personality</div><div class="v">${persona.map(esc).join(' · ') || '—'}</div></div>
         </div>
       </div>

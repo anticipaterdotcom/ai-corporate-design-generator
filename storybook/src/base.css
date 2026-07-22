@@ -246,6 +246,29 @@
 .dd--dont li::before { content: '✕'; position: absolute; left: 0; color: #c0392b; font-weight: 700; }
 @media (max-width: 680px) { .dodont { grid-template-columns: 1fr; } }
 
+/* ===================== HERO ARCHETYPES (Layout pro Marke) ===================== */
+/* editorial — hell, zentriert, serifig; Bild als Band darunter */
+.hero[data-arch="editorial"] { background: var(--paper); color: var(--ink); text-align: center; padding: clamp(60px,10vw,150px) clamp(24px,5vw,80px) clamp(36px,6vw,72px); }
+.hero[data-arch="editorial"] .hero__grip { max-width: 900px; margin-inline: auto; align-items: center; }
+.hero[data-arch="editorial"] .eyebrow { color: var(--muted); }
+.hero[data-arch="editorial"] .display { font-size: clamp(48px,9vw,112px); letter-spacing: -0.03em; line-height: 0.98; }
+.hero[data-arch="editorial"] .lead { margin-inline: auto; color: var(--ink); opacity: .82; }
+.hero[data-arch="editorial"] .row { justify-content: center; }
+.hero[data-arch="editorial"] .hero__accent { display: none; }
+.editorial-band { height: clamp(220px, 34vw, 460px); background-size: cover; background-position: center; }
+
+/* bold — massiver Farbblock, Versalien, kondensiert */
+.hero[data-arch="bold"] { background: var(--color-primary); color: var(--on-primary); }
+.hero[data-arch="bold"] .display { text-transform: uppercase; font-weight: 800; font-size: clamp(48px,12vw,140px); line-height: 0.9; letter-spacing: -0.005em; }
+.hero[data-arch="bold"] .eyebrow { letter-spacing: .24em; }
+
+/* friendly — runde Ecken, Pill-Buttons */
+.hero[data-arch="friendly"] { border-radius: 0 0 clamp(24px,5vw,72px) clamp(24px,5vw,72px); }
+.hero[data-arch="friendly"] .btn { border-radius: 999px; }
+
+/* corporate — formale Akzentlinie über der Headline */
+.hero[data-arch="corporate"] .hero__grip::before { content: ''; display: block; width: 56px; height: 3px; background: var(--color-accent); margin-bottom: 22px; }
+
 /* ===================== ULTIMATE ALL-IN-ONE ===================== */
 /* Section numbering + rhythm */
 .sec { scroll-margin-top: 20px; }
