@@ -1,0 +1,76 @@
+{
+  "slug": "saitenklang",
+  "name": "Saitenklang",
+  "branche": "Musik-Streaming / Audio-Plattform",
+  "claim": "Dreh die Welt lauter.",
+  "anrede": "du",
+  "tokens": {
+    "color": {
+      "primary": "#3B1E6E",
+      "secondary": "#E0338C",
+      "accent": "#F5A623",
+      "neutral": {
+        "900": "#14091F",
+        "700": "#3A3145",
+        "500": "#6B6377",
+        "100": "#EFEAF4",
+        "0": "#FFFFFF"
+      },
+      "semantic": {
+        "success": "#2FB479",
+        "warning": "#F0A32A",
+        "danger": "#E0433B",
+        "info": "#7B5BD6"
+      }
+    },
+    "font": {
+      "heading": "Clash Display",
+      "body": "Inter",
+      "mono": "JetBrains Mono",
+      "fallback": "system-ui, -apple-system, Segoe UI, sans-serif",
+      "scale": {
+        "h1": 48,
+        "h2": 32,
+        "h3": 22,
+        "body": 16,
+        "caption": 13
+      },
+      "weight": {
+        "regular": 400,
+        "medium": 500,
+        "bold": 700
+      }
+    },
+    "space": {
+      "unit": 8,
+      "scale": [
+        0,
+        4,
+        8,
+        16,
+        24,
+        32,
+        48,
+        64
+      ]
+    },
+    "radius": {
+      "sm": 4,
+      "md": 8,
+      "lg": 16,
+      "pill": 999
+    },
+    "motion": {
+      "duration_ms": {
+        "fast": 150,
+        "base": 250,
+        "slow": 400
+      },
+      "easing": "cubic-bezier(0.2, 0, 0, 1)"
+    },
+    "elevation": {
+      "sm": "0 1px 2px rgba(20,9,31,.12)",
+      "md": "0 6px 20px rgba(20,9,31,.20)"
+    }
+  }
+}

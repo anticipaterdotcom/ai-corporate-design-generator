@@ -1,0 +1,21 @@
+name: Aurora Labs
+branche: KI-Entwicklertools
+anrede: du
+claim: Baue mit dem Nordlicht.
+
+persoenlichkeit:
+  - neugierig
+  - präzise
+  - mutig
+  - nahbar
+
+farb_richtung: kühles Violett bis Cyan auf dunklem Grund, leichtes Leuchten
+typo_richtung: geometrische Grotesk, technisch-klar
+bild_richtung: abstrakte Datenvisualisierung, sanfter Glow, dunkle Flächen
+notes: Zielgruppe sind Entwickler:innen; Ton locker aber kompetent.
+
+farb_primary: "#1B1140"
+farb_secondary: "#2E1F6E"
+farb_accent: "#43E7D0"
+font_heading: Space Grotesk
+font_body: Inter

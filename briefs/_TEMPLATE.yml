@@ -1,0 +1,25 @@
+# Marken-Brief — kopiere diese Datei nach briefs/<deine-marke>.yml und fülle sie aus.
+# Pflicht ist nur 'name'. Alles andere schärft das Ergebnis; Leergelassenes
+# erfindet das Modell (bzw. leitet der Dry-Run deterministisch ab).
+
+name:            # z. B. Aurora Labs        (PFLICHT)
+branche:         # z. B. KI-Entwicklertools
+anrede:          # du | Sie
+claim:           # fester Slogan-Wortlaut (leer = Modell erfindet)
+
+persoenlichkeit: # 3–5 Attribute
+  - # z. B. neugierig
+  - # z. B. präzise
+  - # z. B. mutig
+
+farb_richtung:   # Freitext, z. B. "kühles Violett + Cyan, dunkler Grund"
+typo_richtung:   # Freitext, z. B. "geometrische Grotesk, technisch"
+bild_richtung:   # Freitext, z. B. "abstrakte Datenvisualisierung, Glow"
+notes:           # alles Weitere, das der Generator wissen sollte
+
+# Optional: exakte Farben/Schriften erzwingen (überschreiben die Freitext-Richtung)
+# farb_primary:   "#3B1E6E"
+# farb_secondary: "#126E6A"
+# farb_accent:    "#5BE0B0"
+# font_heading:   "Space Grotesk"
+# font_body:      "Inter"

@@ -1,0 +1,174 @@
+name: Generate Brand
+
+# Erzeugt aus einem Brief (briefs/*.yml) ein Markenprofil + Agent-Instructions
+# + Design-Tokens und baut ein fertiges Storybook.
+#
+# SICHERHEIT: Dieses Repo ist öffentlich. Die Job-Secrets (DEVSHOT_API_KEY,
+# ENGINE_TOKEN) dürfen NICHT an fremde Fork-PRs gelangen. Deshalb ist der Trigger
+# MAINTAINER-GATED: die Generierung läuft nur bei
+#   * /generate-Kommentar von einer Person mit Schreibrechten (OWNER/MEMBER/COLLABORATOR), oder
+#   * manuellem workflow_dispatch.
+# GitHub führt issue_comment-Workflows im Kontext des Default-Branch (vertrauenswürdig)
+# aus – der Fork-Code wird NICHT ausgeführt, nur der Brief (Daten) wird gelesen.
+
+on:
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+    inputs:
+      brief:
+        description: "Pfad zum Brief (z. B. briefs/aurora-labs.yml)"
+        required: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: generate-${{ github.event.issue.number || github.run_id }}
+  cancel-in-progress: false
+
+jobs:
+  guard:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.issue.pull_request != null &&
+       startsWith(github.event.comment.body, '/generate') &&
+       contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association))
+    runs-on: ubuntu-latest
+    outputs:
+      pr: ${{ steps.ctx.outputs.pr }}
+      head_ref: ${{ steps.ctx.outputs.head_ref }}
+      brief: ${{ steps.ctx.outputs.brief }}
+    steps:
+      - name: Kontext bestimmen
+        id: ctx
+        uses: actions/github-script@v7
+        with:
+          script: |
+            if (context.eventName === 'workflow_dispatch') {
+              core.setOutput('pr', '');
+              core.setOutput('head_ref', context.ref.replace('refs/heads/', ''));
+              core.setOutput('brief', context.payload.inputs.brief);
+              return;
+            }
+            const prNumber = context.issue.number;
+            const { data: pr } = await github.rest.pulls.get({
+              owner: context.repo.owner, repo: context.repo.repo, pull_number: prNumber,
+            });
+            const m = context.payload.comment.body.trim().match(/^\/generate\s+(\S+)/);
+            core.setOutput('pr', String(prNumber));
+            core.setOutput('head_ref', pr.head.ref);
+            core.setOutput('brief', m ? m[1] : '');
+      - name: Kommentar quittieren (👀)
+        if: github.event_name == 'issue_comment'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.reactions.createForIssueComment({
+              owner: context.repo.owner, repo: context.repo.repo,
+              comment_id: context.payload.comment.id, content: 'eyes',
+            });
+
+  generate:
+    needs: guard
+    runs-on: ubuntu-latest
+    steps:
+      - name: Public-Repo auschecken (PR-Head)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.guard.outputs.head_ref }}
+          fetch-depth: 0
+
+      - name: Private Engine auschecken (nur Code)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.ENGINE_REPO }}
+          token: ${{ secrets.ENGINE_TOKEN }}
+          path: _engine
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Brief bestimmen
+        id: brief
+        run: |
+          set -euo pipefail
+          BRIEF="${{ needs.guard.outputs.brief }}"
+          if [ -z "$BRIEF" ]; then
+            git fetch origin main --depth=1 || true
+            BRIEF=$(git diff --name-only origin/main...HEAD -- 'briefs/*.yml' 'briefs/*.json' \
+                    | grep -v '_TEMPLATE' | head -1 || true)
+          fi
+          if [ -z "$BRIEF" ] || [ ! -f "$BRIEF" ]; then
+            echo "::error::Kein Brief gefunden. Nutze '/generate briefs/<datei>.yml'."
+            exit 1
+          fi
+          echo "brief=$BRIEF" >> "$GITHUB_OUTPUT"
+
+      - name: Marke generieren (DevShot)
+        env:
+          DEVSHOT_API_KEY: ${{ secrets.DEVSHOT_API_KEY }}
+          DEVSHOT_MODEL: ${{ vars.DEVSHOT_MODEL || 'minimax' }}
+        run: |
+          python3 _engine/scripts/generate_brand.py \
+            --brief "${{ steps.brief.outputs.brief }}" \
+            --out-brands brands \
+            --out-agents agents \
+            --out-tokens tokens
+
+      - name: Storybook bauen (nur öffentliche Tokens)
+        run: |
+          set -euo pipefail
+          rm -f _engine/storybook/src/brands/*.tokens.json
+          cp -f tokens/*.tokens.json _engine/storybook/src/brands/ 2>/dev/null || true
+          cd _engine/storybook
+          npm ci
+          npm run build-storybook
+          cd "$GITHUB_WORKSPACE"
+          rm -rf storybook-static
+          cp -r _engine/storybook/storybook-static storybook-static
+
+      - name: Artefakte an PR-Branch committen
+        if: needs.guard.outputs.pr != ''
+        run: |
+          set -euo pipefail
+          git config user.name  "acdg-bot"
+          git config user.email "acdg-bot@users.noreply.github.com"
+          git add brands agents tokens
+          if git diff --cached --quiet; then
+            echo "Keine neuen Artefakte."
+          else
+            git commit -m "feat(brand): Artefakte für ${{ steps.brief.outputs.brief }} [skip ci]"
+            git push origin "HEAD:${{ needs.guard.outputs.head_ref }}"
+          fi
+
+      - name: Storybook als Artifact anhängen
+        uses: actions/upload-artifact@v4
+        with:
+          name: storybook-${{ github.run_id }}
+          path: storybook-static
+          retention-days: 14
+
+      - name: PR kommentieren
+        if: needs.guard.outputs.pr != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const run = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner, repo: context.repo.repo,
+              issue_number: ${{ needs.guard.outputs.pr }},
+              body: [
+                '✅ **Marke generiert** für `${{ steps.brief.outputs.brief }}`.',
+                '',
+                '- `brands/`, `agents/`, `tokens/` an den PR-Branch committet.',
+                `- Fertiges **Storybook** als [Build-Artifact](${run}) angehängt.`,
+                '- Nach dem Merge nach `main` geht das Storybook live (GitHub Pages).',
+              ].join('\n'),
+            });

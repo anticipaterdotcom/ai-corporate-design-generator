@@ -1,0 +1,11 @@
+# Build-Output / Abhängigkeiten
+storybook-static/
+_engine/
+node_modules/
+*.log
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
