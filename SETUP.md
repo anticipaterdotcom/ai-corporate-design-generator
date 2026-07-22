@@ -26,8 +26,13 @@ The private engine repo holds the generation scripts + the self-hosted workflows
 | --- | --- | --- |
 | Secret | `PUBLIC_REPO_TOKEN` | fine-grained PAT, **Contents: write** on *this* public repo |
 | Secret | `DEVSHOT_API_KEY` | `ds_...` key with AI access (only for generation) |
+| Secret (optional) | `UNSPLASH_ACCESS_KEY` | free Unsplash API access key → themed brand photography. Omit and brands ship without photos (hero uses the brand color, cards show a placeholder). |
 | Variable | `PUBLIC_REPO` | `anticipaterdotcom/ai-corporate-design-generator` |
 | Variable | `DEVSHOT_MODEL` | optional, default `minimax` |
+
+> **Unsplash key:** create a free app at https://unsplash.com/oauth/applications → copy
+> the **Access Key** → store as `UNSPLASH_ACCESS_KEY`. The generator derives a search
+> query from the brief's `bild_richtung` (or `branche`) and adds 5 themed photos.
 
 - **Rebuild the Storybook:** run the engine's `Publish Public Storybook` workflow.
 - **Generate a new brand:** run the engine's `Generate Brand` workflow with the
