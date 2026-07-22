@@ -1,65 +1,69 @@
 # AI Corporate Design Generator
 
-Öffne einen Pull Request mit einem **Marken-Brief** – eine GitHub Action erzeugt
-daraus automatisch:
+Open a pull request with a **brand brief** — a GitHub Action automatically produces:
 
-- **`brands/<marke>.md`** – ein vollständiges Markenprofil (KI-lesbar, mit Design-Tokens)
-- **`agents/<marke>.agent.md`** – destillierte **Agent-Instructions** für KI-Agenten
-- **`tokens/<marke>.tokens.json`** – die Design-Tokens
-- ein **fertiges Storybook**, das die Marke live zeigt (Farben, Typografie, Komponenten)
+- **`brands/<brand>.md`** — a complete brand profile (AI-readable, with design tokens)
+- **`agents/<brand>.agent.md`** — distilled **agent instructions** for AI agents
+- **`tokens/<brand>.tokens.json`** — the design tokens
+- a **finished Storybook** that shows the brand live (colors, typography, components)
 
-Die eigentliche Generierungs-Logik („die Magic") liegt in einem separaten,
-**privaten** Engine-Repository; dieses Repo ist die öffentliche Vordertür.
+The actual generation logic ("the magic") lives in a separate, **private** engine
+repository; this repo is the public front door.
 
-## So trägst du eine Marke bei
+> All CI runs on **self-hosted runners** (`[self-hosted, Linux, X64]`).
 
-1. Kopiere `briefs/_TEMPLATE.yml` nach `briefs/<deine-marke>.yml` und fülle sie aus
-   (Pflicht ist nur `name`).
-2. Öffne einen Pull Request mit dieser Datei.
-3. Ein:e Maintainer:in stößt die Generierung an mit einem Kommentar:
+## How to contribute a brand
+
+1. Copy `briefs/_TEMPLATE.yml` to `briefs/<your-brand>.yml` and fill it in
+   (only `name` is required).
+2. Open a pull request with that file.
+3. A maintainer triggers generation with a comment:
    ```
-   /generate briefs/<deine-marke>.yml
+   /generate briefs/<your-brand>.yml
    ```
-4. Die Action committet die generierten Artefakte in deinen PR und hängt das
-   gebaute Storybook als Build-Artifact an. Nach dem Merge geht das Storybook live.
+4. The Action commits the generated artifacts into your PR and attaches the built
+   Storybook as a build artifact. After merge the Storybook goes live.
 
-> [!note] Warum ein Maintainer den Start auslöst
-> Dieses Repo ist öffentlich. Der KI-Key liegt als GitHub-Secret vor und darf aus
-> Sicherheitsgründen **nicht** durch beliebige Fork-PRs auslösbar sein. Deshalb ist
-> die Generierung maintainer-gated (siehe [SETUP.md](SETUP.md)).
+> [!note] Why a maintainer starts the run
+> This repo is public. The AI key is a GitHub secret and must **not** be
+> triggerable by arbitrary fork PRs. Generation is therefore maintainer-gated
+> (see [SETUP.md](SETUP.md)).
 
-## Ablauf
+## Flow
 
 ```mermaid
 flowchart LR
-    A[PR mit briefs/x.yml] --> B{Maintainer: /generate}
-    B --> C[Action: private Engine auschecken]
-    C --> D[generate_brand.py + DevShot-API]
-    D --> E[brands/ + agents/ + tokens/ in den PR]
-    D --> F[Storybook bauen]
-    F --> G[Artifact am PR]
-    E --> H[Merge nach main]
-    H --> I[Storybook live auf GitHub Pages]
+    A[PR with briefs/x.yml] --> B{Maintainer: /generate}
+    B --> C[Action: check out private engine]
+    C --> D[generate_brand.py + DevShot API]
+    D --> E[brands/ + agents/ + tokens/ into the PR]
+    D --> F[Build Storybook]
+    F --> G[Artifact on the PR]
+    E --> H[Merge to main]
+    H --> I[Storybook live on GitHub Pages]
 ```
 
-## Live-Storybook
+## Live Storybook
 
-Nach dem ersten Merge: **https://anticipaterdotcom.github.io/ai-corporate-design-generator/**
-(GitHub Pages muss einmalig aktiviert werden – siehe [SETUP.md](SETUP.md)).
+**https://anticipaterdotcom.github.io/ai-corporate-design-generator/**
 
-## Struktur
+Builds from `tokens/` and deploys via GitHub Pages — no secrets required. Switch
+between brands with the **"Brand"** control in the toolbar.
 
-| Ordner | Inhalt |
+## Layout
+
+| Folder | Contents |
 | --- | --- |
-| `briefs/` | Eingabe: Marken-Briefs (von Contributoren per PR) |
-| `brands/` | Ausgabe: generierte Markenprofile (KI-MD) |
-| `agents/` | Ausgabe: Agent-Instructions je Marke |
-| `tokens/` | Ausgabe: Design-Tokens (Basis fürs Storybook) |
-| `.github/workflows/` | Generierung (maintainer-gated) + Pages-Deploy |
+| `briefs/` | Input: brand briefs (submitted by contributors via PR) |
+| `brands/` | Output: generated brand profiles (AI-MD) |
+| `agents/` | Output: agent instructions per brand |
+| `tokens/` | Output: design tokens (source for the Storybook) |
+| `storybook/` | Storybook viewer (brand switcher, token-themed) |
+| `.github/workflows/` | Generation (maintainer-gated) + Pages deploy |
 
-## Beispiele
+## Examples
 
-`tokens/` enthält 10 fiktive Beispielmarken, damit das Storybook von Anfang an
-gefüllt ist. `briefs/example-aurora-labs.yml` zeigt einen ausgefüllten Brief.
+`tokens/` ships with 10 fictional example brands so the Storybook is populated
+from the start. `briefs/example-aurora-labs.yml` shows a filled-in brief.
 
-Siehe auch [CONTRIBUTING.md](CONTRIBUTING.md) und [SETUP.md](SETUP.md).
+See also [CONTRIBUTING.md](CONTRIBUTING.md) and [SETUP.md](SETUP.md).

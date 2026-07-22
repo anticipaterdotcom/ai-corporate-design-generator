@@ -1,23 +1,27 @@
-# Marken-Brief — kopiere diese Datei nach briefs/<deine-marke>.yml und fülle sie aus.
-# Pflicht ist nur 'name'. Alles andere schärft das Ergebnis; Leergelassenes
-# erfindet das Modell (bzw. leitet der Dry-Run deterministisch ab).
+# Brand brief — copy this file to briefs/<your-brand>.yml and fill it in.
+# Only 'name' is required. Everything else sharpens the result; anything left
+# empty is invented by the model (or deterministically derived in dry-run).
+#
+# Field keys are German (the generated brands use German brand voice):
+#   branche = industry, anrede = form of address (du/Sie),
+#   persoenlichkeit = personality, farb_* = color, typo_* / font_* = typography.
 
-name:            # z. B. Aurora Labs        (PFLICHT)
-branche:         # z. B. KI-Entwicklertools
-anrede:          # du | Sie
-claim:           # fester Slogan-Wortlaut (leer = Modell erfindet)
+name:            # e.g. Aurora Labs           (REQUIRED)
+branche:         # industry, e.g. AI developer tools
+anrede:          # du | Sie   (informal | formal)
+claim:           # fixed slogan wording (empty = model invents one)
 
-persoenlichkeit: # 3–5 Attribute
-  - # z. B. neugierig
-  - # z. B. präzise
-  - # z. B. mutig
+persoenlichkeit: # 3–5 personality attributes
+  - # e.g. curious
+  - # e.g. precise
+  - # e.g. bold
 
-farb_richtung:   # Freitext, z. B. "kühles Violett + Cyan, dunkler Grund"
-typo_richtung:   # Freitext, z. B. "geometrische Grotesk, technisch"
-bild_richtung:   # Freitext, z. B. "abstrakte Datenvisualisierung, Glow"
-notes:           # alles Weitere, das der Generator wissen sollte
+farb_richtung:   # free text, e.g. "cool violet to cyan on a dark ground"
+typo_richtung:   # free text, e.g. "geometric grotesque, technical"
+bild_richtung:   # free text, e.g. "abstract data visualization, soft glow"
+notes:           # anything else the generator should know
 
-# Optional: exakte Farben/Schriften erzwingen (überschreiben die Freitext-Richtung)
+# Optional: pin exact colors/fonts (override the free-text hints)
 # farb_primary:   "#3B1E6E"
 # farb_secondary: "#126E6A"
 # farb_accent:    "#5BE0B0"

@@ -1,8 +1,8 @@
 name: Deploy Storybook
 
-# Baut das Storybook aus den committeten Tokens (tokens/*.tokens.json) und
-# deployt es nach GitHub Pages. Der Storybook-Viewer liegt in diesem Repo -
-# es werden KEINE Secrets benötigt.
+# Builds the Storybook from the committed tokens (tokens/*.tokens.json) and
+# deploys it to GitHub Pages. The Storybook viewer lives in this repo, so no
+# secrets are required.
 
 on:
   push:
@@ -24,7 +24,7 @@ concurrency:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Linux, X64]
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
@@ -35,7 +35,7 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Tokens spiegeln + Storybook bauen
+      - name: Mirror tokens + build Storybook
         run: |
           set -euo pipefail
           mkdir -p storybook/src/brands
