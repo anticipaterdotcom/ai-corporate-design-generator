@@ -378,6 +378,103 @@
       "nie du/Sie mischen"
     ]
   },
+  "nachtwild": {
+    "name": "Nachtwild",
+    "mission": "Naturwein zugänglich machen – unverfälscht, ungefiltert und ohne Marketinggeschwätz, direkt von Menschen, die ihn machen.",
+    "werte": "Ehrlichkeit, Handwerk, Neugier, Langsamkeit, Nachtleben.",
+    "zielgruppe": "Neugierige Wein-Menschen zwischen 28 und 55, die Konvention satt haben, Etiketten lesen statt ihnen zu vertrauen und Abende in schummrigen Bars einem perfekt inszenierten Tasting vorziehen.",
+    "farbwelt": [
+      {
+        "rolle": "Primär",
+        "name": "Burgundnacht",
+        "hex": "#4A1A2F"
+      },
+      {
+        "rolle": "Sekundär",
+        "name": "Beerenabgrund",
+        "hex": "#6B2747"
+      },
+      {
+        "rolle": "Akzent",
+        "name": "Kerzenamber",
+        "hex": "#D98E48"
+      },
+      {
+        "rolle": "Akzent",
+        "name": "Hefeweiß",
+        "hex": "#EFE7D8"
+      },
+      {
+        "rolle": "Neutral 900",
+        "name": "Fassschwarz",
+        "hex": "#161013"
+      },
+      {
+        "rolle": "Neutral 700",
+        "name": "Granatruss",
+        "hex": "#3A2A30"
+      },
+      {
+        "rolle": "Neutral 500",
+        "name": "Traubengrau",
+        "hex": "#7A6A70"
+      },
+      {
+        "rolle": "Neutral 100",
+        "name": "Pergament",
+        "hex": "#F5EFE6"
+      },
+      {
+        "rolle": "Neutral 0",
+        "name": "Milchkaffee",
+        "hex": "#FBF7F1"
+      },
+      {
+        "rolle": "Semantik Erfolg",
+        "name": "Naturgrün",
+        "hex": "#5C7A3A"
+      },
+      {
+        "rolle": "Semantik Warnung",
+        "name": "Mostgelb",
+        "hex": "#C99A2E"
+      },
+      {
+        "rolle": "Semantik Fehler",
+        "name": "Korkfeuer",
+        "hex": "#9B2C2C"
+      },
+      {
+        "rolle": "Semantik Info",
+        "name": "Nachtlavendel",
+        "hex": "#6E5B8E"
+      }
+    ],
+    "logo": [
+      "Das Wortmarken-Logo besteht ausschließlich aus der Wortmarke \"Nachtwild\" in GT Sectra Display, Versalien, mit leicht geöffnetem Letter-Spacing. Kein Icon, kein Claim, kein Beiwerk – das Logo atmet den gleichen Purismus wie die Weine.",
+      "Sekundärzeichen ist ein stilisisiertes Mondsichel-Siegel, das per Hand mit ungleichen Strichstärken gezeichnet wirkt; es wird nur auf Etiketten, Stempel und Briefpapier eingesetzt, nie in der Web-Headline.",
+      "Die Grundform ist das Rechteck mit leicht abgerundeten Ecken (Radius 8 px im Web, 4 mm im Druck) – keine Kreise, keine geschwungenen Organik-Formen, keine Tropfen.",
+      "Linien und Trenner sind 1 px dünn in Traubengrau (#7A6A70) und stehen immer auf dem dunklen Grund, nie zwischen Headline und Body."
+    ],
+    "bildstil": "35-mm-Ästhetik, warmes Kerzenlicht, sichtbares Korn (ISO 800–1600), kurze Tiefenschärfe. Motive: geöffnete Flaschen mit sichtbarem Sediment, Hände beim Einschenken, schummrige Bartheke um Mitternacht, zerknitterte Etiketten, schiefe Weingläser, kein perfekt poliertes Produktstill.",
+    "tonalitaet": "Du-Ansprache, kurze Sätze, viel Subjekt-Verzicht. Keine Adjektivketten, keine Superlative, keine \"handverlesen\"-Sprüche. Wenn ein Wein scheiße ist, sagen wir, dass er scheiße ist – und warum.",
+    "do": [
+      "Kerzenlicht und warmes Amber als Lichtquelle – niemals Studio-Blitz oder kalt-weißes LED",
+      "Auf Hefeweiß oder Burgundnacht setzen",
+      "nie reinweiß oder reingrau",
+      "Hintergründe dürfen körnig und uneben sein",
+      "Auf Etiketten und Karten ausschließlich GT Sectra Display für Titel und Söhne Mono für alles andere verwenden",
+      "Weine, Produzenten und Orte beim Namen nennen, auch wenn der Name ungewohnt klingt – keine Anonymisierung"
+    ],
+    "dont": [
+      "Keine Trauben- oder Weinglas-Icons",
+      "keine ornamentalen Schnörkel",
+      "keine verschnörkelten \"Vintagesiegel\"",
+      "Keine Adjektive wie \"handverlesen\", \"mit Liebe\", \"exklusiv\", \"edel\" – wer das braucht, kauft nicht bei uns",
+      "Kein Stockfoto-Lächeln",
+      "keine Models mit perfektem Weinglas-Smile"
+    ]
+  },
   "nordlicht-energie": {
     "name": "Nordlicht Energie",
     "mission": "Nordlicht Energie versorgt Privathaushalte, Kommunen und mittelständische Unternehmen mit echtem Ökostrom aus Wasser, Wind und Sonne – und macht den Wechsel zu erneuerbaren Energien so einfach und nachvollziehbar wie möglich.",
