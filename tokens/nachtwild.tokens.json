@@ -1,0 +1,85 @@
+{
+  "slug": "nachtwild",
+  "name": "Nachtwild",
+  "branche": "Naturweinbar & Weinhandel",
+  "claim": "Wein, wie er ist. Nicht wie er sein soll.",
+  "anrede": "du",
+  "persoenlichkeit": [
+    "unangepasst",
+    "ehrlich",
+    "nachtaktiv",
+    "handwerklich",
+    "unaufgeregt"
+  ],
+  "schriftfamilie": "GT Sectra Display",
+  "positioning": "- **Mission:** Naturwein zugänglich machen – unverfälscht, ungefiltert und ohne Marketinggeschwätz, direkt von Menschen, die ihn machen.",
+  "tokens": {
+    "color": {
+      "primary": "#4A1A2F",
+      "secondary": "#6B2747",
+      "accent": "#D98E48",
+      "neutral": {
+        "900": "#161013",
+        "700": "#3A2A30",
+        "500": "#7A6A70",
+        "100": "#F5EFE6",
+        "0": "#FBF7F1"
+      },
+      "semantic": {
+        "success": "#5C7A3A",
+        "warning": "#C99A2E",
+        "danger": "#9B2C2C",
+        "info": "#6E5B8E"
+      }
+    },
+    "font": {
+      "heading": "GT Sectra Display",
+      "body": "Söhne Mono",
+      "mono": "Söhne Mono",
+      "fallback": "Inter Tight, ui-monospace, 'JetBrains Mono', monospace",
+      "scale": {
+        "h1": "64px",
+        "h2": "36px",
+        "h3": "24px",
+        "body": "16px",
+        "caption": "13px"
+      },
+      "weight": {
+        "regular": 400,
+        "medium": 500,
+        "bold": 700
+      }
+    },
+    "space": {
+      "unit": "8px",
+      "scale": [
+        "4px",
+        "8px",
+        "16px",
+        "24px",
+        "32px",
+        "48px",
+        "64px",
+        "96px"
+      ]
+    },
+    "radius": {
+      "sm": "4px",
+      "md": "8px",
+      "lg": "16px",
+      "pill": "999px"
+    },
+    "motion": {
+      "duration_ms": {
+        "fast": 120,
+        "base": 220,
+        "slow": 420
+      },
+      "easing": "cubic-bezier(0.22, 0.61, 0.36, 1)"
+    },
+    "elevation": {
+      "sm": "0 1px 2px rgba(22,16,19,0.45)",
+      "md": "0 6px 18px rgba(22,16,19,0.55)"
+    }
+  }
+}
