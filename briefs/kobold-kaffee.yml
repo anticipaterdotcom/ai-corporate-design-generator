@@ -1,0 +1,14 @@
+name: Kobold Kaffee
+branche: Specialty-Kaffeerösterei (Direkthandel & Abo)
+anrede: du
+claim: "Handgeröstet, koboldfrisch."
+persoenlichkeit:
+  - warm
+  - verspielt
+  - handwerklich
+  - neugierig
+farb_primary: "#3B2417"
+farb_secondary: "#C87941"
+farb_accent: "#4FBE8E"
+font_heading: "Fraunces"
+font_body: "Inter"

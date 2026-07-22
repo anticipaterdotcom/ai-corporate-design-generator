@@ -1,0 +1,14 @@
+name: Nordlicht Energie
+branche: Ökostrom / Erneuerbare Energien
+anrede: Sie
+claim: "Strom, so klar wie der Norden."
+persoenlichkeit:
+  - vertrauenswürdig
+  - klar
+  - vorausschauend
+  - ruhig
+farb_primary: "#0B2A4A"
+farb_secondary: "#126E6A"
+farb_accent: "#5BE0B0"
+font_heading: "Söhne"
+font_body: "Söhne"

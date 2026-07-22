@@ -1,0 +1,14 @@
+name: Lumen Health
+branche: Digital Health / Telemedizin
+anrede: Sie
+claim: "Gesundheit, die zuhört."
+persoenlichkeit:
+  - beruhigend
+  - klar
+  - zugänglich
+  - kompetent
+farb_primary: "#178A8A"
+farb_secondary: "#0F6E6E"
+farb_accent: "#FF7A66"
+font_heading: "Fraunces"
+font_body: "Nunito Sans"

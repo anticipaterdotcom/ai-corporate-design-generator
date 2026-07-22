@@ -1,0 +1,103 @@
+---
+title: Agent-Instructions – Steinbruch Bau
+marke: Steinbruch Bau
+anrede: Sie
+ki-agent: true
+tags:
+  - marke
+  - agent
+  - ki
+---
+
+# Agent-Instructions – Steinbruch Bau
+
+Maschinenlesbare Handlungsanweisung für KI-Agenten. Die Tokens unten sind die
+kanonische Werte-Quelle (identisch mit dem Profil in `brands/`).
+
+## Kontext
+- **Marke:** Steinbruch Bau
+- **Branche:** Bau / Architektur / Hoch- und Tiefbau
+- **Claim (wörtlich verwenden):** „Auf Fels gebaut."
+- **Anrede:** Sie
+- **Persönlichkeit:** bodenständig, robust, klar, verlässlich
+
+## Regeln
+- **Text:** Anrede „Sie" konsequent. Claim nur im obigen Wortlaut.
+  Ton entsprechend der Persönlichkeit. Keine verbotenen Floskeln, kein Kanalwechsel im Ton.
+- **UI:** Ausschließlich die Tokens unten als CSS-Variablen nutzen (keine magischen Werte).
+  `color.accent` nur für CTAs/Highlights. Kontrast IMMER gegen WCAG ≥ 4.5:1 prüfen.
+- **Bild:** Stil aus dem Markenprofil (`brands/steinbruch-bau.md`) übernehmen;
+  keinen Text ins Bild rendern.
+
+## Design-Tokens (kanonisch)
+```json
+{
+  "color": {
+    "primary": "#4A4E54",
+    "secondary": "#1C1E22",
+    "accent": "#F2C200",
+    "neutral": {
+      "900": "#14161A",
+      "700": "#3A3D42",
+      "500": "#6A6E75",
+      "100": "#E8E9EB",
+      "0": "#FFFFFF"
+    },
+    "semantic": {
+      "success": "#3E8E41",
+      "warning": "#E0A22B",
+      "danger": "#C0392B",
+      "info": "#2E7BC4"
+    }
+  },
+  "font": {
+    "heading": "Aktiv Grotesk",
+    "body": "Inter",
+    "mono": "IBM Plex Mono",
+    "fallback": "system-ui, -apple-system, Segoe UI, sans-serif",
+    "scale": {
+      "h1": 46,
+      "h2": 32,
+      "h3": 22,
+      "body": 16,
+      "caption": 13
+    },
+    "weight": {
+      "regular": 400,
+      "medium": 500,
+      "bold": 700
+    }
+  },
+  "space": {
+    "unit": 8,
+    "scale": [
+      0,
+      4,
+      8,
+      16,
+      24,
+      32,
+      48,
+      64
+    ]
+  },
+  "radius": {
+    "sm": 2,
+    "md": 4,
+    "lg": 8,
+    "pill": 999
+  },
+  "motion": {
+    "duration_ms": {
+      "fast": 150,
+      "base": 250,
+      "slow": 400
+    },
+    "easing": "cubic-bezier(0.2, 0, 0, 1)"
+  },
+  "elevation": {
+    "sm": "0 1px 2px rgba(20,22,26,.12)",
+    "md": "0 6px 20px rgba(20,22,26,.20)"
+  }
+}
+```

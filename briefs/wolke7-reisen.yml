@@ -1,0 +1,14 @@
+name: Wolke7 Reisen
+branche: Reise-Buchungsplattform / Online-Reisebüro
+anrede: du
+claim: "Ab auf Wolke 7."
+persoenlichkeit:
+  - freundlich
+  - luftig
+  - optimistisch
+  - unkompliziert
+farb_primary: "#2FA8E0"
+farb_secondary: "#FDE9CE"
+farb_accent: "#FF6F61"
+font_heading: "Nunito"
+font_body: "Nunito"

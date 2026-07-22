@@ -1,0 +1,14 @@
+name: Saitenklang
+branche: Musik-Streaming / Audio-Plattform
+anrede: du
+claim: "Dreh die Welt lauter."
+persoenlichkeit:
+  - expressiv
+  - energetisch
+  - kulturell neugierig
+  - nahbar
+farb_primary: "#3B1E6E"
+farb_secondary: "#E0338C"
+farb_accent: "#F5A623"
+font_heading: "Clash Display"
+font_body: "Inter"

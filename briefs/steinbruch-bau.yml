@@ -1,0 +1,14 @@
+name: Steinbruch Bau
+branche: Bau / Architektur / Hoch- und Tiefbau
+anrede: Sie
+claim: "Auf Fels gebaut."
+persoenlichkeit:
+  - bodenständig
+  - robust
+  - klar
+  - verlässlich
+farb_primary: "#4A4E54"
+farb_secondary: "#1C1E22"
+farb_accent: "#F2C200"
+font_heading: "Aktiv Grotesk"
+font_body: "Inter"

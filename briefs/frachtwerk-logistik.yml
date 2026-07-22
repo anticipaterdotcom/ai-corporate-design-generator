@@ -1,0 +1,14 @@
+name: Frachtwerk Logistik
+branche: Logistik / Fracht / Supply Chain
+anrede: Sie
+claim: "Fracht, die ankommt."
+persoenlichkeit:
+  - robust
+  - zuverlässig
+  - direkt
+  - effizient
+farb_primary: "#F25C05"
+farb_secondary: "#2B2F36"
+farb_accent: "#F2A900"
+font_heading: "Roboto Condensed"
+font_body: "Inter"
