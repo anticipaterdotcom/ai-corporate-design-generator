@@ -15,17 +15,14 @@
 
 ## What happens next
 
-A maintainer comments on the PR:
-
-```
-/generate briefs/your-brand.yml
-```
-
-Then the PR receives:
+After your brief PR is merged, a maintainer runs the **private, self-hosted**
+`Generate Brand` workflow with your brief path. It then pushes to this repo:
 - `brands/your-brand.md` — full profile
 - `agents/your-brand.agent.md` — agent instructions
 - `tokens/your-brand.tokens.json` — design tokens
-- a comment linking the built **Storybook artifact**
+
+and rebuilds the live Storybook (served from the `gh-pages` branch). This public
+repo runs no CI itself — all compute happens on self-hosted runners.
 
 ## Brief conventions
 
