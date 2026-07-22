@@ -1,12 +1,15 @@
 import '../src/base.css';
-import { tokensToVars, applyVars } from '../src/theme.js';
+import { tokensToVars, applyVars, ensureFonts } from '../src/theme.js';
 import { BRAND_LIST, currentBrand } from '../src/brands.js';
 
-// Marken-Umschalter in der Storybook-Toolbar.
+// Preload fonts for every brand so switching is instant.
+BRAND_LIST.forEach((b) => ensureFonts(b.tokens));
+
+// Brand switcher in the Storybook toolbar.
 export const globalTypes = {
   brand: {
-    name: 'Marke',
-    description: 'Markentheme umschalten',
+    name: 'Brand',
+    description: 'Switch brand theme',
     defaultValue: BRAND_LIST[0] && BRAND_LIST[0].slug,
     toolbar: {
       icon: 'paintbrush',
@@ -16,14 +19,17 @@ export const globalTypes = {
   },
 };
 
-// Jede Story wird in eine Canvas gehüllt, deren CSS-Variablen aus den Tokens
-// der gewählten Marke stammen -> Umschalten färbt die ganze Galerie um.
+// Each story is wrapped in a canvas whose CSS variables come from the selected
+// brand's tokens — switching re-themes the whole gallery, with the real fonts.
 const withBrand = (StoryFn, context) => {
   const brand = currentBrand(context);
   const wrapper = document.createElement('div');
   wrapper.className = 'acdg-canvas';
   wrapper.setAttribute('data-brand', brand ? brand.slug : 'none');
-  if (brand) applyVars(wrapper, tokensToVars(brand.tokens));
+  if (brand) {
+    ensureFonts(brand.tokens);
+    applyVars(wrapper, tokensToVars(brand.tokens));
+  }
 
   const story = StoryFn();
   if (typeof story === 'string') wrapper.innerHTML = story;
@@ -37,8 +43,6 @@ export const parameters = {
   layout: 'fullscreen',
   controls: { hideNoControlsWarning: true },
   options: {
-    storySort: {
-      order: ['Marke', 'Foundations', 'Komponenten'],
-    },
+    storySort: { order: ['Brand', 'Foundations', 'Components'] },
   },
 };

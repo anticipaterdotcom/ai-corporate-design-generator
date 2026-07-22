@@ -1,31 +1,29 @@
 import { currentBrand } from '../brands.js';
 
-export default {
-  title: 'Foundations/Spacing & Radien',
-};
+export default { title: 'Foundations/Spacing & Radii' };
 
-export const SpacingUndRadien = (args, context) => {
+export const Scale = (args, context) => {
   const t = currentBrand(context).tokens || {};
   const space = (t.space && t.space.scale) || [];
   const radius = t.radius || {};
 
-  const spacingRows = space.map((v, i) => `
-    <div class="row">
-      <span class="t-caption muted" style="width:120px">--space-${i} · ${v}px</span>
-      <div class="spacing-bar" style="width:${Math.max(v, 2)}px"></div>
+  const spacing = space.map((v, i) => `
+    <div class="type-row" style="grid-template-columns:120px 1fr;padding:12px 0">
+      <div class="meta">space-${i}<br>${v}px</div>
+      <div class="row"><div class="bar" style="width:${Math.max(v, 2)}px"></div></div>
     </div>`).join('');
 
-  const radiusItems = Object.entries(radius).map(([k, v]) => `
-    <div style="text-align:center">
-      <div class="radius-demo" style="border-radius:${v}px">${v}px</div>
-      <div class="t-caption muted">${k}</div>
+  const radii = Object.entries(radius).map(([k, v]) => `
+    <div class="tile" style="text-align:center">
+      <div class="radius-demo" style="border-radius:${Math.min(v, 46)}px">${v}px</div>
+      <p class="caption" style="margin-top:10px">radius-${k}</p>
     </div>`).join('');
 
-  return `<div class="stack">
-    <h1 class="t-h1">Spacing &amp; Radien</h1>
-    <h3 class="t-h3">Spacing-Skala</h3>
-    <div class="stack">${spacingRows}</div>
-    <h3 class="t-h3">Radien</h3>
-    <div class="row" style="gap:var(--space-4)">${radiusItems}</div>
-  </div>`;
+  return `<section class="band"><div class="wrap stack-lg">
+    <div class="stack"><p class="eyebrow">Foundations</p><h2 class="h1">Spacing &amp; Radii</h2>
+      <p class="body">An 8-point spacing rhythm keeps layouts predictable; the radius set gives the brand its shape language.</p></div>
+    <div><h3 class="h3" style="margin-bottom:6px">Spacing scale</h3>${spacing}</div>
+    <div class="stack"><h3 class="h3">Corner radii</h3>
+      <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(140px,1fr))">${radii}</div></div>
+  </div></section>`;
 };

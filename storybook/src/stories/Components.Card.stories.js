@@ -1,23 +1,26 @@
 import { currentBrand } from '../brands.js';
 
-export default {
-  title: 'Komponenten/Card',
-};
+export default { title: 'Components/Card' };
 
-export const Standard = (args, context) => {
+const esc = (s) => String(s || '').replace(/[&<>"]/g, (c) =>
+  ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+export const Default = (args, context) => {
   const b = currentBrand(context);
-  return `
-    <div class="card stack">
-      <div class="card__accent"></div>
-      <h3 class="t-h3">${b.name}</h3>
-      <p class="t-body">${b.claim || 'Eine themenbare Karte, die Farben, Radien und Schatten aus den Marken-Tokens bezieht.'}</p>
-      <div class="row">
-        <span class="badge badge--accent">Neu</span>
-        <span class="t-caption muted">${b.branche || ''}</span>
+  return `<section class="band"><div class="wrap">
+    <div class="card">
+      <div class="card__bar"></div>
+      <p class="eyebrow card__eyebrow">${esc(b.branche)}</p>
+      <h3 class="h3" style="margin:8px 0 12px">${esc(b.name)}</h3>
+      <p class="body" style="font-size:15px">${esc(b.claim) || 'A themeable card that draws its colors, radii, shadow and type from the brand tokens.'}</p>
+      <div class="row" style="margin-top:16px">
+        <span class="badge badge--soft">Featured</span>
+        <span class="badge badge--accent">New</span>
       </div>
-      <div class="row">
-        <button class="btn btn--primary">Aktion</button>
-        <button class="btn btn--ghost">Details</button>
+      <div class="row" style="margin-top:20px">
+        <button class="btn btn--primary btn--sm">Action</button>
+        <button class="btn btn--ghost btn--sm">Details</button>
       </div>
-    </div>`;
+    </div>
+  </div></section>`;
 };
