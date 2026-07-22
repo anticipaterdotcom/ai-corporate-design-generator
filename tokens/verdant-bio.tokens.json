@@ -4,6 +4,14 @@
   "branche": "Naturkosmetik / Bio-Hautpflege",
   "claim": "Weniger, aber ehrlich.",
   "anrede": "du",
+  "schriftfamilie": "Cormorant Garamond",
+  "persoenlichkeit": [
+    "minimalistisch",
+    "natürlich",
+    "ehrlich",
+    "achtsam"
+  ],
+  "positioning": "Zertifizierte Bio-Hautpflege mit kurzer, ehrlicher Rezeptur, die auf leise Wirksamkeit statt große Versprechen setzt und Ruhe in die tägliche Routine bringt.",
   "tokens": {
     "color": {
       "primary": "#7C8B6A",

@@ -4,6 +4,14 @@
   "branche": "Specialty-Kaffeerösterei (Direkthandel & Abo)",
   "claim": "Handgeröstet, koboldfrisch.",
   "anrede": "du",
+  "schriftfamilie": "Fraunces",
+  "persoenlichkeit": [
+    "warm",
+    "verspielt",
+    "handwerklich",
+    "neugierig"
+  ],
+  "positioning": "Kleine Direkthandels-Rösterei, die handwerkliche Röstkunst mit koboldhaftem Spieltrieb verbindet – warmes Licht, ehrliche Bohnen und ein Augenzwinkern in jeder Tasse.",
   "tokens": {
     "color": {
       "primary": "#3B2417",

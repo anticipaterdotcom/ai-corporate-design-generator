@@ -4,6 +4,14 @@
   "branche": "Logistik / Fracht / Supply Chain",
   "claim": "Fracht, die ankommt.",
   "anrede": "Sie",
+  "schriftfamilie": "Roboto Condensed",
+  "persoenlichkeit": [
+    "robust",
+    "zuverlässig",
+    "direkt",
+    "effizient"
+  ],
+  "positioning": "Bundesweiter Fracht- und Supply-Chain-Dienstleister, der Waren termintreu bewegt und dabei die Verlässlichkeit einer eingespielten Umschlaghalle ausstrahlt.",
   "tokens": {
     "color": {
       "primary": "#F25C05",

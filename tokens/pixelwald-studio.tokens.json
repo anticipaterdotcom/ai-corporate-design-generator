@@ -4,6 +4,14 @@
   "branche": "Indie-Game-Studio / interaktive Erlebnisse",
   "claim": "Wo Pixel wild wachsen.",
   "anrede": "du",
+  "schriftfamilie": "Chakra Petch",
+  "persoenlichkeit": [
+    "mutig",
+    "verspielt",
+    "technikverliebt",
+    "community-nah"
+  ],
+  "positioning": "Indie-Game-Studio für mutige, verspielte Spielwelten – Dark-Mode-first, mit leuchtenden Neon-Akzenten und einer Community, die mitbaut statt nur zuschaut.",
   "tokens": {
     "color": {
       "primary": "#0E0E14",

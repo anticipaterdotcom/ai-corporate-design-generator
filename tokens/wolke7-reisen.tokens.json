@@ -4,6 +4,14 @@
   "branche": "Reise-Buchungsplattform / Online-Reisebüro",
   "claim": "Ab auf Wolke 7.",
   "anrede": "du",
+  "schriftfamilie": "Nunito",
+  "persoenlichkeit": [
+    "freundlich",
+    "luftig",
+    "optimistisch",
+    "unkompliziert"
+  ],
+  "positioning": "Leichtfüßige Online-Reiseplattform, die das Buchen so unbeschwert macht wie den ersten Blick aus dem Flugzeugfenster – heller Himmel, gute Laune, kein Ballast.",
   "tokens": {
     "color": {
       "primary": "#2FA8E0",

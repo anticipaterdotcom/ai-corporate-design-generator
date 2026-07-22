@@ -4,6 +4,14 @@
   "branche": "Bau / Architektur / Hoch- und Tiefbau",
   "claim": "Auf Fels gebaut.",
   "anrede": "Sie",
+  "schriftfamilie": "Aktiv Grotesk",
+  "persoenlichkeit": [
+    "bodenständig",
+    "robust",
+    "klar",
+    "verlässlich"
+  ],
+  "positioning": "Hoch- und Tiefbauunternehmen, das Solidität ausstrahlt und die Härte des Materials mit der Klarheit eines sauberen Bauplans verbindet.",
   "tokens": {
     "color": {
       "primary": "#4A4E54",

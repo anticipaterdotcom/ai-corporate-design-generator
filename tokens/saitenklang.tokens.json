@@ -4,6 +4,14 @@
   "branche": "Musik-Streaming / Audio-Plattform",
   "claim": "Dreh die Welt lauter.",
   "anrede": "du",
+  "schriftfamilie": "Clash Display",
+  "persoenlichkeit": [
+    "expressiv",
+    "energetisch",
+    "kulturell neugierig",
+    "nahbar"
+  ],
+  "positioning": "Musik-Streaming-Plattform, die Entdeckerlust und Konzertenergie ins Wohnzimmer holt und jeden Sound wie einen Auftritt unter Bühnenlicht feiert.",
   "tokens": {
     "color": {
       "primary": "#3B1E6E",

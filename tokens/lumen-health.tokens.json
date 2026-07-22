@@ -4,6 +4,14 @@
   "branche": "Digital Health / Telemedizin",
   "claim": "Gesundheit, die zuhört.",
   "anrede": "Sie",
+  "schriftfamilie": "Fraunces",
+  "persoenlichkeit": [
+    "beruhigend",
+    "klar",
+    "zugänglich",
+    "kompetent"
+  ],
+  "positioning": "Digitale Gesundheitsbegleitung und Telemedizin, die medizinische Kompetenz mit der Ruhe eines hellen, aufgeräumten Raumes verbindet – nah, klar und nie kalt.",
   "tokens": {
     "color": {
       "primary": "#178A8A",

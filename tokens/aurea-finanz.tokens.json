@@ -4,6 +4,14 @@
   "branche": "Fintech / digitales Private Banking & Vermögensverwaltung",
   "claim": "Ihr Vermögen, in ruhiger Hand.",
   "anrede": "Sie",
+  "schriftfamilie": "Canela",
+  "persoenlichkeit": [
+    "premium",
+    "diskret",
+    "präzise",
+    "souverän"
+  ],
+  "positioning": "Digitales Private Banking, das die Diskretion einer traditionsreichen Privatbank mit der Präzision moderner Vermögensverwaltung verbindet – zurückhaltend im Ton, kompromisslos in der Sorgfalt.",
   "tokens": {
     "color": {
       "primary": "#10203A",

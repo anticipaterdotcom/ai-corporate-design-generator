@@ -4,6 +4,14 @@
   "branche": "Ökostrom / Erneuerbare Energien",
   "claim": "Strom, so klar wie der Norden.",
   "anrede": "Sie",
+  "schriftfamilie": "Söhne",
+  "persoenlichkeit": [
+    "vertrauenswürdig",
+    "klar",
+    "vorausschauend",
+    "ruhig"
+  ],
+  "positioning": "Regionaler Ökostrom-Versorger, der Verlässlichkeit ausstrahlt und die Ruhe einer nordischen Nacht mit dem Aufbruchssignal eines Polarlichts verbindet.",
   "tokens": {
     "color": {
       "primary": "#0B2A4A",
