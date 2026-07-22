@@ -1,0 +1,476 @@
+{
+  "aurea-finanz": {
+    "name": "Aurea Finanz",
+    "mission": "anspruchsvolle Vermögen digital, diskret und präzise verwalten.",
+    "werte": "Diskretion, Sorgfalt, langfristige Verantwortung, Klarheit.",
+    "zielgruppe": "vermögende Privatkund:innen, Unternehmer:innen & Family Offices.",
+    "farbwelt": [
+      {
+        "rolle": "Primär",
+        "name": "Nachtblau",
+        "hex": "#10203A"
+      },
+      {
+        "rolle": "Sekundär",
+        "name": "Stahlblau",
+        "hex": "#26456E"
+      },
+      {
+        "rolle": "Akzent",
+        "name": "Aureum-Gold",
+        "hex": "#C9A227"
+      },
+      {
+        "rolle": "Fläche",
+        "name": "Alabaster",
+        "hex": "#F2EFE9"
+      }
+    ],
+    "logo": [
+      "Serifen-Wortmarke „Aurea\" mit fein gesetztem Gold-Akzent am „A\"-Scheitel.",
+      "Schutzraum = Höhe des „A\"; Mindestbreite 26 mm / 104 px.",
+      "Bevorzugt Nachtblau auf Alabaster oder Alabaster auf Nachtblau.",
+      "Formensprache: schmale Linien, präzise Winkel, dezente Gold-Haarlinien."
+    ],
+    "bildstil": "reduziert, hochwertig, Materialität (Papier, gebürstetes Metall,",
+    "tonalitaet": "souverän, diskret, präzise; Sie; ruhige, exakte Sätze; keine",
+    "do": [
+      "Nachtblau als ruhige, souveräne Basis, Gold nur als Akzent (Linie, Detail, Highlight)",
+      "Alabaster als Fläche",
+      "Kontrast Text/Fläche prüfen",
+      "Sachlich bleiben"
+    ],
+    "dont": [
+      "Kein flächiges Gold",
+      "keine Reichtums-Klischees (Luxusautos, Zigarren, Handshakes)",
+      "keine Rendite-Versprechen",
+      "nie du/Sie mischen"
+    ]
+  },
+  "frachtwerk-logistik": {
+    "name": "Frachtwerk Logistik",
+    "mission": "Güterströme planbar, transparent und pünktlich ans Ziel bringen.",
+    "werte": "Termintreue, Verlässlichkeit, Effizienz, klare Kommunikation.",
+    "zielgruppe": "Industrie, Handel & KMU mit regelmäßigem Versand- und Umschlagbedarf.",
+    "farbwelt": [
+      {
+        "rolle": "Primär",
+        "name": "Signal-Orange",
+        "hex": "#F25C05"
+      },
+      {
+        "rolle": "Sekundär",
+        "name": "Stahl-Anthrazit",
+        "hex": "#2B2F36"
+      },
+      {
+        "rolle": "Akzent",
+        "name": "Signal-Amber",
+        "hex": "#F2A900"
+      },
+      {
+        "rolle": "Fläche",
+        "name": "Hellgrau",
+        "hex": "#EDEFF2"
+      },
+      {
+        "rolle": "Text",
+        "name": "Anthrazit",
+        "hex": "#16181D"
+      }
+    ],
+    "logo": [
+      "Wortmarke in kondensierten Versalien; „W\" als Bildmarke aus zwei diagonalen",
+      "Schutzraum = Höhe des „F\"; Mindestbreite 26 mm / 100 px.",
+      "Bevorzugt Anthrazit auf Hellgrau oder Weiß auf Anthrazit; Orange als Signal.",
+      "Formensprache: kräftige Diagonalen, rechte Winkel, funktionale Balken, kleine Radien."
+    ],
+    "bildstil": "reale Logistik – Container, LKW, Umschlaghallen, Kranbrücken;",
+    "tonalitaet": "sachlich-direkt, konkret, effizient; Sie; kurze klare Sätze;",
+    "do": [
+      "Anthrazit als ruhige Basis, Orange als Signal (CTA, Status, Wegeführung) auf dunklem Grund oder groß genug einsetzen",
+      "Diagonalen bewusst führen",
+      "Kontrast prüfen"
+    ],
+    "dont": [
+      "Kein Orange als kleiner Fließtext auf Hell (≈ 2.9:1 ✗)",
+      "keine verspielten Icons",
+      "keine leeren Superlative",
+      "nie du/Sie mischen"
+    ]
+  },
+  "kobold-kaffee": {
+    "name": "Kobold Kaffee",
+    "mission": "außergewöhnliche Bohnen aus fairem Direkthandel frisch rösten und",
+    "werte": "Handwerk, Transparenz entlang der Lieferkette, Freude am Entdecken.",
+    "zielgruppe": "neugierige Kaffee-Genießer:innen, die Herkunft und Röstgrad",
+    "farbwelt": [
+      {
+        "rolle": "Primär",
+        "name": "Espresso-Braun",
+        "hex": "#3B2417"
+      },
+      {
+        "rolle": "Sekundär",
+        "name": "Kupfer",
+        "hex": "#C87941"
+      },
+      {
+        "rolle": "Akzent",
+        "name": "Minz-Grün",
+        "hex": "#4FBE8E"
+      },
+      {
+        "rolle": "Fläche",
+        "name": "Creme",
+        "hex": "#F4ECDD"
+      }
+    ],
+    "logo": [
+      "Wortmarke in Fraunces, das Punkt-i als kleine Kobold-Mütze oder Kaffeebohne.",
+      "Schutzraum = Höhe des „K\"; Mindestbreite 22 mm / 88 px.",
+      "Bevorzugt Espresso-Braun auf Creme oder Creme auf Espresso-Braun.",
+      "Formensprache: runde Bohnenformen, weiche Kupfer-Bögen, dampfende Kringel."
+    ],
+    "bildstil": "handwerkliche Röststuben, warmes goldenes Licht, Hände an Bohnen",
+    "tonalitaet": "warm, verspielt, neugierig; du; kurze einladende Sätze,",
+    "do": [
+      "Warmes Licht und echtes Handwerk zeigen, Espresso-Braun als Basis, Kupfer für Wärme, Minz-Grün nur als Akzent (Buttons, Frische-Hinweise)",
+      "Kontrast Text/Fläche prüfen"
+    ],
+    "dont": [
+      "Keine kalten Stockfotos",
+      "kein flächiges Minz-Grün",
+      "keine belehrenden Barista-Vorträge",
+      "nie du/Sie mischen"
+    ]
+  },
+  "lumen-health": {
+    "name": "Lumen Health",
+    "mission": "Gute medizinische Versorgung ruhig, verständlich und für alle",
+    "werte": "Empathie, Klarheit, Verlässlichkeit, Barrierefreiheit von Grund auf.",
+    "zielgruppe": "Menschen jeden Alters, die unkomplizierte, vertrauensvolle",
+    "farbwelt": [
+      {
+        "rolle": "Primär",
+        "name": "Ruhe-Teal",
+        "hex": "#178A8A"
+      },
+      {
+        "rolle": "Sekundär",
+        "name": "Tiefes Teal",
+        "hex": "#0F6E6E"
+      },
+      {
+        "rolle": "Akzent",
+        "name": "Warmes Koralle",
+        "hex": "#FF7A66"
+      },
+      {
+        "rolle": "Fläche",
+        "name": "Soft-White",
+        "hex": "#F4FAFA"
+      },
+      {
+        "rolle": "Neutral",
+        "name": "Sanftes Graublau",
+        "hex": "#14252B"
+      }
+    ],
+    "logo": [
+      "Wortmarke „Lumen Health\" mit einem weichen Lichtbogen-Punkt über dem „u\".",
+      "Schutzraum = Höhe des „L\"; Mindestbreite 26 mm / 100 px.",
+      "Bevorzugt Ruhe-Teal auf Soft-White oder Weiß auf Tiefem Teal.",
+      "Formensprache: runde Ecken (radius.md), weiche Bögen, viel Weißraum, keine harten Kanten."
+    ],
+    "bildstil": "echte Menschen in ruhigen Alltagssituationen, helles weiches Licht,",
+    "tonalitaet": "empathisch, klar, nüchtern; Sie; kurze verständliche Sätze;",
+    "do": [
+      "Warm und ruhig ansprechen, Wichtiges zusätzlich per Text/Icon kennzeichnen (nie Tonalität & Wording nur über Farbe), Kontraste großzügig prüfen, Koralle nur als sparsamer Akzent mit dunklem Text"
+    ],
+    "dont": [
+      "Keine Heilversprechen",
+      "keine Angst- oder Druck-Rhetorik",
+      "keine kalt-klinischen Stockbilder, weißer Text auf Koralle vermeiden",
+      "nie du/Sie mischen"
+    ]
+  },
+  "nordlicht-energie": {
+    "name": "Nordlicht Energie",
+    "mission": "100 % erneuerbare Energie einfach und transparent zugänglich machen.",
+    "werte": "Verlässlichkeit, Transparenz, Verantwortung für kommende Generationen.",
+    "zielgruppe": "umweltbewusste Haushalte & KMU im norddeutschen Raum.",
+    "farbwelt": [
+      {
+        "rolle": "Primär",
+        "name": "Nachtblau",
+        "hex": "#0B2A4A"
+      },
+      {
+        "rolle": "Sekundär",
+        "name": "Nordsee-Teal",
+        "hex": "#126E6A"
+      },
+      {
+        "rolle": "Akzent",
+        "name": "Polarlicht-Grün",
+        "hex": "#5BE0B0"
+      },
+      {
+        "rolle": "Fläche",
+        "name": "Eisweiß",
+        "hex": "#EAF0F4"
+      }
+    ],
+    "logo": [
+      "Wortmarke mit stilisiertem Polarlicht-Bogen über dem „i\".",
+      "Schutzraum = Höhe des „N\"; Mindestbreite 24 mm / 96 px.",
+      "Bevorzugt Nachtblau auf Eisweiß oder Weiß auf Nachtblau.",
+      "Formensprache: weiche Bögen, Verläufe von Teal zu Polarlicht-Grün."
+    ],
+    "bildstil": "weite nordische Landschaften, klares kühles Licht, echte Anlagen",
+    "tonalitaet": "sachlich-kompetent, ruhig, ermutigend; Sie; kurze klare Sätze;",
+    "do": [
+      "Zahlen transparent machen (Herkunft des Stroms), Nachtblau als ruhige Basis, Polarlicht-Grün nur als Akzent",
+      "Kontrast Text/Fläche prüfen"
+    ],
+    "dont": [
+      "Kein grelles „Öko-Grün\" flächig",
+      "keine gestockten Klischeebilder",
+      "kein Alarm-Ton",
+      "nie du/Sie mischen"
+    ]
+  },
+  "pixelwald-studio": {
+    "name": "Pixelwald Studio",
+    "mission": "interaktive Erlebnisse bauen, die überraschen, verbinden und Lust",
+    "werte": "Mut zum Experiment, Handwerk & Tech, Fairness gegenüber Spieler:innen,",
+    "zielgruppe": "neugierige Gamer:innen, Streamer:innen & Bastler:innen, die Indie",
+    "farbwelt": [
+      {
+        "rolle": "Primär / Grund",
+        "name": "Nachtpixel",
+        "hex": "#0E0E14"
+      },
+      {
+        "rolle": "Akzent",
+        "name": "Neon-Magenta",
+        "hex": "#FF2E88"
+      },
+      {
+        "rolle": "Akzent 2",
+        "name": "Electric-Cyan",
+        "hex": "#22E0FF"
+      },
+      {
+        "rolle": "Fläche (Raised)",
+        "name": "Karbon",
+        "hex": "#1A1A26"
+      }
+    ],
+    "logo": [
+      "Wortmarke mit einem aus Voxeln „wachsenden\" Baum-Glyph vor dem „P\".",
+      "Schutzraum = Höhe des „P\"; Mindestbreite 24 mm / 96 px.",
+      "Bevorzugt hell auf Nachtpixel; Neon-Magenta oder Cyan nur als Glow-Akzent.",
+      "Formensprache: Pixel-/Voxel-Raster, weiche Glow-Kanten, klare 8-px-Gitter."
+    ],
+    "bildstil": "leuchtende Neon-Akzente auf tiefem Dunkel, Pixel-/Voxel-Motive,",
+    "tonalitaet": "frech-motivierend, verspielt, technikverliebt; du; kurze",
+    "do": [
+      "Dunkler Grund (neutral.0) als Basis, helle Schrift (neutral.900), Neon nur als Akzent & Glow",
+      "Kontrast Text/Fläche prüfen (Barrierefreiheit)"
+    ],
+    "dont": [
+      "Kein Neon flächig (blendet)",
+      "keine hellen Full-Screen-Flächen",
+      "kein Kinder-Slang",
+      "nie du/Sie mischen",
+      "nie Text ins Key-Art rendern"
+    ]
+  },
+  "saitenklang": {
+    "name": "Saitenklang",
+    "mission": "Musik jeder Szene entdeckbar machen und Fans mit den Klängen verbinden, die sie bewegen.",
+    "werte": "Vielfalt, Leidenschaft, Nähe zur Kultur, Fairness gegenüber Kunstschaffenden.",
+    "zielgruppe": "neugierige Hörer:innen zwischen 16 und 40, die Szenen, Playlists & Live-Momente lieben.",
+    "farbwelt": [
+      {
+        "rolle": "Primär",
+        "name": "Bühnenviolett",
+        "hex": "#3B1E6E"
+      },
+      {
+        "rolle": "Sekundär",
+        "name": "Magenta-Beat",
+        "hex": "#E0338C"
+      },
+      {
+        "rolle": "Akzent",
+        "name": "Amber-Spot",
+        "hex": "#F5A623"
+      },
+      {
+        "rolle": "Fläche",
+        "name": "Nachtbühne",
+        "hex": "#14091F"
+      }
+    ],
+    "logo": [
+      "Wortmarke, in der der Aufstrich des „S\" als schwingende Saite ausläuft.",
+      "Schutzraum = Höhe des „S\"; Mindestbreite 24 mm / 96 px.",
+      "Bevorzugt Weiß auf Bühnenviolett oder Magenta auf Nachtbühne.",
+      "Formensprache: schwingende Kurven, Klangwellen, Verlauf Violett→Magenta."
+    ],
+    "bildstil": "Konzertlicht, Bewegungsunschärfe, Menschen & Musik, Farbverläufe",
+    "tonalitaet": "expressiv, energetisch, kulturell neugierig, nahbar; du;",
+    "do": [
+      "Verlauf Violett→Magenta als Key-Visual (siehe Grafische Elemente), Amber-Spot nur als Akzent für CTAs",
+      "Kontrast Text/Fläche prüfen"
+    ],
+    "dont": [
+      "Keine flächigen Amber-Flächen",
+      "keine leblosen Stockfotos",
+      "kein generischer Hype-Ton",
+      "nie du/Sie mischen"
+    ]
+  },
+  "steinbruch-bau": {
+    "name": "Steinbruch Bau",
+    "mission": "Bauwerke schaffen, die Generationen tragen – termintreu, sauber und ehrlich kalkuliert.",
+    "werte": "Verlässlichkeit, Sicherheit, handwerkliche Qualität, Wort gilt.",
+    "zielgruppe": "öffentliche Auftraggeber, Bauträger & Industrie im Hoch- und Tiefbau.",
+    "farbwelt": [
+      {
+        "rolle": "Primär",
+        "name": "Beton-Grau",
+        "hex": "#4A4E54"
+      },
+      {
+        "rolle": "Sekundär",
+        "name": "Stahl-Anthrazit",
+        "hex": "#1C1E22"
+      },
+      {
+        "rolle": "Akzent",
+        "name": "Baustellen-Gelb",
+        "hex": "#F2C200"
+      },
+      {
+        "rolle": "Fläche",
+        "name": "Betonweiß",
+        "hex": "#E8E9EB"
+      }
+    ],
+    "logo": [
+      "Wortmarke in Versalien, kantig gesetzt, mit gebrochener Bruchkante als Bildzeichen.",
+      "Schutzraum = Höhe des „S\"; Mindestbreite 24 mm / 96 px.",
+      "Bevorzugt Beton-Grau auf Betonweiß oder Betonweiß auf Stahl-Anthrazit.",
+      "Formensprache: rechte Winkel, klare Kanten, Diagonalstreifen (Warnband) nur als Akzent."
+    ],
+    "bildstil": "echte Baustellen, Material (Beton, Stahl, Holz), Struktur & Textur,",
+    "tonalitaet": "sachlich-handfest, klar, verlässlich; Sie; kurze, direkte Sätze;",
+    "do": [
+      "Beton-Grau und Anthrazit als solide Basis, Baustellen-Gelb nur als Akzent auf Dunkel/Schwarz (Buttons, Warnband, Highlights)",
+      "Kontrast Text/Fläche prüfen"
+    ],
+    "dont": [
+      "Kein Gelb als Textfarbe auf Weiß (zu geringer Kontrast)",
+      "keine gestockten Klischeebilder",
+      "kein Marketing-Sprech",
+      "nie du/Sie mischen"
+    ]
+  },
+  "verdant-bio": {
+    "name": "Verdant Bio",
+    "mission": "wirksame Naturkosmetik mit wenigen, nachvollziehbaren Inhaltsstoffen zugänglich machen.",
+    "werte": "Ehrlichkeit, Achtsamkeit, Nachhaltigkeit, Reduktion aufs Wesentliche.",
+    "zielgruppe": "bewusste Menschen, die klare Pflege ohne Marketing-Lärm suchen.",
+    "farbwelt": [
+      {
+        "rolle": "Primär",
+        "name": "Salbeigrün",
+        "hex": "#7C8B6A"
+      },
+      {
+        "rolle": "Sekundär",
+        "name": "Ton/Clay",
+        "hex": "#C9B29B"
+      },
+      {
+        "rolle": "Fläche",
+        "name": "Creme Off-White",
+        "hex": "#F5F1E8"
+      },
+      {
+        "rolle": "Text",
+        "name": "Warm-Dunkelbraun",
+        "hex": "#2E251C"
+      }
+    ],
+    "logo": [
+      "Wortmarke in Serife, kleingeschrieben, mit reduziertem Blatt-Signet neben dem „V\".",
+      "Schutzraum = Höhe des „V\"; Mindestbreite 22 mm / 88 px.",
+      "Bevorzugt Warm-Dunkelbraun auf Creme oder Salbeigrün auf Creme.",
+      "Formensprache: organische, weiche Konturen, feine Linien, viel Leere."
+    ],
+    "bildstil": "viel Weißraum, natürliches Tageslicht, Texturen (Blätter, Haut, Glas),",
+    "tonalitaet": "ruhig, klar, ehrlich, achtsam; du; kurze Sätze; keine",
+    "do": [
+      "Nutze viel Weißraum, Salbeigrün als ruhige Basis, Clay als warmen Sekundärton",
+      "Zeige echte Textur, nenne Inhaltsstoffe ehrlich",
+      "Kontrast Text/Fläche prüfen"
+    ],
+    "dont": [
+      "Kein greller Neon-Look",
+      "keine Wirkversprechen oder Superlative",
+      "kein überretuschiertes „perfektes\" Bild",
+      "nie du/Sie mischen"
+    ]
+  },
+  "wolke7-reisen": {
+    "name": "Wolke7 Reisen",
+    "mission": "Reisen für alle einfach, transparent und in Minuten buchbar machen.",
+    "werte": "Leichtigkeit, Ehrlichkeit, Vorfreude, Nahbarkeit.",
+    "zielgruppe": "spontane Städtereisende, Familien & Paare, die unkompliziert los wollen.",
+    "farbwelt": [
+      {
+        "rolle": "Primär",
+        "name": "Himmelblau",
+        "hex": "#2FA8E0"
+      },
+      {
+        "rolle": "Akzent",
+        "name": "Koralle",
+        "hex": "#FF6F61"
+      },
+      {
+        "rolle": "Sekundär",
+        "name": "Sand/Creme",
+        "hex": "#FDE9CE"
+      },
+      {
+        "rolle": "Text",
+        "name": "Dunkelblau",
+        "hex": "#0D2C40"
+      }
+    ],
+    "logo": [
+      "Wortmarke „Wolke7\" mit weicher Wolken-Rundung über der „7\".",
+      "Schutzraum = Höhe der „7\"; Mindestbreite 24 mm / 96 px.",
+      "Bevorzugt Himmelblau auf Weiß oder Weiß auf Himmelblau.",
+      "Formensprache: weiche Rundungen, leichte Wolken- und Bogenformen, viel Luft."
+    ],
+    "bildstil": "helle Reisemomente, Himmel/Küste/Städte, echte Menschen im Sonnenlicht,",
+    "tonalitaet": "freundlich, optimistisch, unkompliziert; du; kurze, luftige Sätze;",
+    "do": [
+      "Vorfreude wecken, Himmelblau als luftige Basis, Koralle nur als Akzent für Call-to-Action & Highlights",
+      "Auf CTAs dunkelblauen Text nutzen und Kontrast prüfen"
+    ],
+    "dont": [
+      "Kein Countdown-Druck",
+      "keine gestockten Klischee-Strandbilder",
+      "kein Fließtext auf Koralle/Himmelblau",
+      "nie du/Sie mischen"
+    ]
+  }
+}
