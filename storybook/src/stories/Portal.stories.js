@@ -17,7 +17,7 @@ export const AllBrands = () => {
       .map((k) => c[k] ? `<span class="pcard__dot" style="background:${c[k]}"></span>` : '')
       .join('');
     // Link switches the brand global and opens its overview (works in the deployed manager).
-    const href = `?path=/story/brand-overview--overview&globals=brand:${b.slug}`;
+    const href = `?path=/story/brand-guideline--guideline&globals=brand:${b.slug}`;
     return `<a class="pcard" href="${href}" target="_top">
       <div class="pcard__img" style="background-image:url('${img}')"></div>
       <div class="pcard__body">

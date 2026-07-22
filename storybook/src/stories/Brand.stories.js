@@ -1,21 +1,30 @@
 import { currentBrand } from '../brands.js';
-import { bestOn } from '../theme.js';
+import { bestOn, contrast, wcagRating } from '../theme.js';
 import IMAGES from '../images.json';
 import CONTENT from '../content.json';
 
-export default { title: 'Brand/Overview' };
+export default { title: 'Brand/Guideline' };
 
 const esc = (s) => String(s || '').replace(/[&<>"]/g, (c) =>
   ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-const sectionHead = (kicker, title) =>
-  `<div class="stack"><p class="eyebrow">${esc(kicker)}</p><h2 class="h1">${esc(title)}</h2></div>`;
+const sec = (no, id, kicker, title) =>
+  `<div class="stack" id="${id}"><p class="secno">${no}</p><p class="eyebrow">${esc(kicker)}</p><h2 class="h1">${esc(title)}</h2></div>`;
 
-export const Overview = (args, context) => {
+const ICONS = {
+  star: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6.5 7 .8-5 4.8 1.3 7-6.6-3.6L5.4 21l1.3-7-5-4.8 7-.8z"/></svg>',
+  check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg>',
+  arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+  heart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-9.5-9A5 5 0 0112 5a5 5 0 019.5 7c-2.5 4.5-9.5 9-9.5 9z"/></svg>',
+  bolt: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>',
+};
+
+export const Guideline = (args, context) => {
   const b = currentBrand(context);
   const t = b.tokens || {};
   const c = t.color || {};
   const f = t.font || {};
+  const n = c.neutral || {};
   const ct = CONTENT[b.slug] || {};
   const persona = b.persoenlichkeit || [];
   const imgs = IMAGES[b.slug] || [];
@@ -23,133 +32,197 @@ export const Overview = (args, context) => {
   const claim = esc(b.claim) || 'Design that carries the brand.';
   const domain = b.slug.replace(/-/g, '') + '.com';
   const values = (ct.werte || '').replace(/\.$/, '').split(/,\s*/).filter(Boolean);
+  const wm = esc(b.name);
+  const wm1 = esc(b.name.split(' ')[0]);
 
   const heroBg = hero
     ? `background-image: linear-gradient(100deg, var(--color-primary) 0%, var(--color-primary) 30%, color-mix(in srgb, var(--color-primary) 52%, transparent) 64%, color-mix(in srgb, var(--color-primary) 8%, transparent) 100%), url('${hero}'); background-size: cover; background-position: center right;`
     : '';
 
-  // ---- Color: named colorway (real names from the brand) ----
-  const cwCards = (ct.farbwelt || []).map((col) => {
+  const toc = [
+    ['01', 'strategy', 'Strategy'], ['02', 'verbal', 'Verbal identity'], ['03', 'logo', 'Logo'],
+    ['04', 'color', 'Color'], ['05', 'type', 'Typography'], ['06', 'icon', 'Icon & shape'],
+    ['07', 'motion', 'Motion'], ['08', 'grid', 'Grid & space'], ['09', 'components', 'Components'],
+    ['10', 'apps', 'Applications'], ['11', 'a11y', 'Accessibility'], ['12', 'assets', 'Assets'],
+  ].map(([no, id, l]) => `<a href="#${id}"><span class="n">${no}</span><span class="l">${l}</span></a>`).join('');
+
+  const namedColors = (ct.farbwelt || []).map((col) => {
     const on = bestOn(col.hex);
-    return `<div class="cw">
-      <div class="chip" style="background:${col.hex};color:${on}"><span class="role">${esc(col.rolle)}</span></div>
-      <div class="meta"><div class="nm">${esc(col.name)}</div><div class="hx">${esc(col.hex)}</div></div>
-    </div>`;
+    return `<div class="cw"><div class="chip" style="background:${col.hex};color:${on}"><span class="role">${esc(col.rolle)}</span></div>
+      <div class="meta"><div class="nm">${esc(col.name)}</div><div class="hx">${esc(col.hex)}</div></div></div>`;
   }).join('');
 
-  // ---- Logo misuse tiles ----
-  const misuse = [
-    ['stretch', 'Nicht verzerren'], ['recolor', 'Nicht umfärben'],
-    ['rot', 'Nicht drehen'], ['shadow', 'Keine Effekte'],
-  ].map(([cls, cap]) => `<div class="m ${cls}"><span class="x">✕</span><span class="wm3">${esc(b.name.split(' ')[0])}</span><div class="cap">${cap}</div></div>`).join('');
+  const ramp = ['900', '700', '500', '100', '0'].filter((k) => n[k]).map((k) => {
+    const hex = n[k]; const on = bestOn(hex);
+    return `<div style="background:${hex};color:${on}">${k}</div>`;
+  }).join('');
 
-  const listItems = (arr) => (arr || []).map((x) => `<li>${esc(x)}</li>`).join('');
+  const pair = (label, bg, fg) => {
+    const cr = contrast(bg, fg); const pass = cr >= 4.5;
+    return `<div class="pair" style="background:${bg};color:${fg}">
+      <div class="sample">Aa</div><div style="font-size:12px;opacity:.85">${label}</div>
+      <span class="aa" style="background:${pass ? 'rgba(255,255,255,.25)' : 'rgba(0,0,0,.25)'};color:${fg}">${wcagRating(cr)} · ${cr.toFixed(1)}:1</span></div>`;
+  };
+
+  const misuse = [['stretch', 'Nicht verzerren'], ['recolor', 'Nicht umfärben'], ['rot', 'Nicht drehen'], ['shadow', 'Keine Effekte']]
+    .map(([cls, cap]) => `<div class="m ${cls}"><span class="x">✕</span><span class="wm3">${wm1}</span><div class="cap">${cap}</div></div>`).join('');
+
+  const li = (arr) => (arr || []).map((x) => `<li>${esc(x)}</li>`).join('');
+  const icons = Object.values(ICONS).map((s) => `<div class="ico">${s}</div>`).join('');
+  const scale = f.scale || {};
+  const typeRows = Object.entries(scale).sort((a, d) => d[1] - a[1]).map(([k, px]) =>
+    `<div class="type-row"><div class="meta">${k} · ${px}px</div><div style="font-family:${px >= (scale.h3 || 22) ? 'var(--font-heading)' : 'var(--font-body)'},var(--font-fallback);font-size:${px}px;line-height:1.1;font-weight:${px >= (scale.h3 || 22) ? 700 : 400}">${wm}</div></div>`).join('');
+  const dl = (t2, s2, ic) => `<div class="dl"><div class="ic2">${ic}</div><div><div class="t">${t2}</div><div class="s">${s2}</div></div></div>`;
 
   return `
   <section class="hero" style="${heroBg}">
     <div class="hero__accent"></div>
     <div class="hero__grip stack">
-      <p class="eyebrow">${esc(b.branche)}</p>
-      <h1 class="display">${esc(b.name)}</h1>
+      <p class="eyebrow">${esc(b.branche)} · Brand Guidelines</p>
+      <h1 class="display">${wm}</h1>
       <p class="lead">${claim}</p>
       <div class="row" style="margin-top:12px">
-        <button class="btn btn--accent btn--lg">Get started</button>
-        <button class="btn btn--lg" style="background:transparent;color:var(--on-primary);border-color:color-mix(in srgb,var(--on-primary) 45%,transparent)">Guidelines</button>
+        <button class="btn btn--accent btn--lg">Download kit</button>
+        <button class="btn btn--lg" style="background:transparent;color:var(--on-primary);border-color:color-mix(in srgb,var(--on-primary) 45%,transparent)">Contents</button>
       </div>
     </div>
   </section>
 
-  <section class="band"><div class="wrap grid" style="grid-template-columns:1.3fr 1fr;gap:clamp(24px,5vw,72px);align-items:start">
-    <div class="stack-lg">
-      <div class="stack"><p class="eyebrow">Essence</p>
-        <p class="statement">${esc(ct.mission) || esc(b.positioning) || claim}</p></div>
-      <div>
-        ${ct.zielgruppe ? `<div class="factline"><div class="k">Für</div><div class="v">${esc(ct.zielgruppe)}</div></div>` : ''}
-        <div class="factline"><div class="k">Persönlichkeit</div><div class="v">${persona.map(esc).join(' · ') || '—'}</div></div>
-        <div class="factline"><div class="k">Ansprache</div><div class="v">${b.anrede === 'Sie' ? 'formal (Sie)' : 'informal (du)'}</div></div>
+  <section class="band"><div class="wrap stack">
+    <p class="eyebrow">Contents</p><div class="toc">${toc}</div>
+  </div></section>
+
+  <section class="band sec"><div class="wrap stack-lg">
+    ${sec('01', 'strategy', 'Foundation', 'Brand strategy')}
+    <div class="grid" style="grid-template-columns:1.3fr 1fr;gap:clamp(24px,5vw,64px);align-items:start">
+      <div class="stack-lg">
+        <div class="stack"><p class="eyebrow">Mission</p><p class="statement">${esc(ct.mission) || esc(b.positioning) || claim}</p></div>
+        <div>
+          ${ct.zielgruppe ? `<div class="factline"><div class="k">Audience</div><div class="v">${esc(ct.zielgruppe)}</div></div>` : ''}
+          <div class="factline"><div class="k">Positioning</div><div class="v">${esc(b.positioning) || claim}</div></div>
+          <div class="factline"><div class="k">Personality</div><div class="v">${persona.map(esc).join(' · ') || '—'}</div></div>
+        </div>
       </div>
-    </div>
-    <div class="stack">
-      <p class="eyebrow">Werte</p>
-      <ul class="valuelist">${values.map((v) => `<li>${esc(v)}</li>`).join('') || '<li>—</li>'}</ul>
+      <div class="stack"><p class="eyebrow">Values</p><ul class="valuelist">${values.map((v) => `<li>${esc(v)}</li>`).join('') || '<li>—</li>'}</ul></div>
     </div>
   </div></section>
 
-  <section class="band"><div class="wrap stack-lg">
-    ${sectionHead('Identity', 'Logo & wordmark')}
-    <div class="grid" style="grid-template-columns:1.2fr 1fr;gap:clamp(20px,3vw,40px);align-items:stretch">
-      <div class="lockup"><span class="wordmark">${esc(b.name)}<span class="dot">.</span></span></div>
-      <div class="stack">
-        <p class="eyebrow">Clearspace</p>
-        <div class="clearspace"><div class="box"><span class="wm2">${esc(b.name.split(' ')[0])}</span></div></div>
-        <p class="caption">${esc((ct.logo && ct.logo.find((l) => /schutzraum|clearspace|mindest/i.test(l))) || 'Schutzraum ringsum freihalten; Mindestgröße beachten.')}</p>
-      </div>
+  <section class="band sec"><div class="wrap stack-lg">
+    ${sec('02', 'verbal', 'Verbal identity', 'How the brand speaks')}
+    ${ct.tonalitaet ? `<p class="statement" style="font-size:clamp(22px,3vw,38px);max-width:28ch">${esc(ct.tonalitaet)}</p>` : ''}
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
+      <div class="factline" style="border:0"><div class="k">Tagline</div><div class="v"><strong>${claim}</strong></div></div>
+      <div class="factline" style="border:0"><div class="k">Address</div><div class="v">${b.anrede === 'Sie' ? 'formal (Sie)' : 'informal (du)'}</div></div>
     </div>
-    ${ct.logo && ct.logo.length ? `<div class="grid" style="grid-template-columns:1fr 1fr;gap:24px;align-items:start">
-      <div class="stack"><p class="eyebrow">Regeln</p><ul class="valuelist" style="gap:0">${ct.logo.map((l) => `<li style="font-family:var(--fb);font-size:15px;font-weight:400">${esc(l)}</li>`).join('')}</ul></div>
-      <div class="stack"><p class="eyebrow">Fehlanwendungen</p><div class="misuse">${misuse}</div></div>
-    </div>` : ''}
-  </div></section>
-
-  <section class="band"><div class="wrap stack-lg">
-    ${sectionHead('Color', 'Palette')}
-    <div class="colorbar">
-      <div class="cb-primary"><span class="role">Primary</span></div>
-      <div class="cb-secondary"><span class="role">Secondary</span></div>
-      <div class="cb-accent"><span class="role">Accent</span></div>
-    </div>
-    <div class="colorway">${cwCards || (t.color ? `` : '')}</div>
-  </div></section>
-
-  <section class="band"><div class="wrap grid" style="grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,64px);align-items:center">
-    <div class="stack">
-      <p class="eyebrow">Type &amp; voice</p>
-      <p class="pullquote">“${claim.replace(/\.$/, '')}<span class="mark">.</span>”</p>
-    </div>
-    <div class="stack">
-      <p class="caption">Headline · <strong>${esc(f.heading)}</strong> — Body · <strong>${esc(f.body)}</strong></p>
-      <div class="specimen" style="font-size:clamp(40px,6vw,72px)">Aa</div>
-      <p class="body">Set in ${esc(f.body)} at ${(f.scale && f.scale.body) || 16}px, 1.65 line height — for effortless reading across every touchpoint.</p>
-    </div>
-  </div></section>
-
-  ${(ct.do && ct.do.length) || (ct.dont && ct.dont.length) ? `<section class="band"><div class="wrap stack-lg">
-    ${sectionHead('Voice & tone', 'How the brand speaks')}
-    ${ct.tonalitaet ? `<p class="statement" style="font-size:clamp(22px,3vw,36px);max-width:30ch">${esc(ct.tonalitaet)}</p>` : ''}
     <div class="dodont">
-      <div class="dd dd--do"><h4>Do</h4><ul>${listItems(ct.do)}</ul></div>
-      <div class="dd dd--dont"><h4>Don’t</h4><ul>${listItems(ct.dont)}</ul></div>
-    </div>
-  </div></section>` : ''}
-
-  ${imgs.length > 1 ? `<section class="band"><div class="wrap stack">
-    ${sectionHead('Photography · Bildsprache', 'Image world')}
-    ${ct.bildstil ? `<p class="body" style="max-width:70ch">${esc(ct.bildstil)}</p>` : ''}
-    <div class="bildwelt">
-      ${imgs.slice(1, 5).map((u, i) => `<img loading="lazy" class="${i === 0 ? 'tall' : ''}" src="${u}" alt="${esc(b.name)} mood ${i + 1}">`).join('')}
-    </div>
-    <p class="caption">Photography via Unsplash — placeholder mood for this fictional brand.</p>
-  </div></section>` : ''}
-
-  <section class="band"><div class="wrap stack-lg">
-    ${sectionHead('Applications', 'The brand, in the wild')}
-    <div class="apps">
-      <div><div class="stage"><div class="bizcard"><div class="wm">${esc(b.name)}</div><div class="meta">${esc(b.branche)}<br>hello@${domain}<br>${domain}</div></div></div><p class="stage__cap">Business card</p></div>
-      <div><div class="stage"><div class="post"><div class="img" style="background-image:url('${imgs[1] || hero || ''}')"></div><div class="veil"></div><div class="inner"><span class="tag">${esc(persona[0] || 'new')}</span><div class="headline">${claim}</div></div></div></div><p class="stage__cap">Social post</p></div>
-      <div><div class="stage"><div class="poster"><div class="kicker">${esc(b.branche)}</div><div class="stack" style="gap:14px"><div class="rule"></div><div class="big">${claim}</div></div><div class="kicker">${esc(b.name)} — ${domain}</div></div></div><p class="stage__cap">Poster</p></div>
-      <div><div class="stage"><div class="phone"><div class="notch"></div><div class="appbar">${esc(b.name)}</div><div class="appimg" style="background-image:url('${imgs[2] || hero || ''}')"></div><div class="appcard"><div class="t">${esc(persona[1] || b.name)}</div><div class="d">${esc(b.branche)}</div></div><div class="appbtn">Get started</div></div></div><p class="stage__cap">App screen</p></div>
+      <div class="dd dd--do"><h4>Do</h4><ul>${li(ct.do)}</ul></div>
+      <div class="dd dd--dont"><h4>Don’t</h4><ul>${li(ct.dont)}</ul></div>
     </div>
   </div></section>
 
-  <section class="band"><div class="wrap stack-lg">
-    ${sectionHead('Components', 'Interface kit')}
-    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:start">
-      <div class="card"><div class="card__bar"></div><p class="eyebrow card__eyebrow">${esc(b.branche)}</p><h3 class="h3" style="margin:6px 0 10px">${esc(b.name)}</h3><p class="body" style="font-size:15px">${claim}</p><div class="row" style="margin-top:18px"><button class="btn btn--primary btn--sm">Primary</button><button class="btn btn--ghost btn--sm">Details</button></div></div>
-      <div class="stack">
-        <div class="row"><button class="btn btn--primary">Primary</button><button class="btn btn--accent">Accent</button><button class="btn btn--ghost">Ghost</button></div>
-        <div class="row"><span class="badge badge--primary">Primary</span><span class="badge badge--accent">Accent</span><span class="badge badge--soft">Soft</span><span class="badge badge--success">Success</span><span class="badge badge--warning">Warning</span><span class="badge badge--danger">Danger</span></div>
-        <p class="caption">Switch brand in the toolbar → every section, color, typeface and mockup re-themes live.</p>
+  <section class="band sec"><div class="wrap stack-lg">
+    ${sec('03', 'logo', 'Identity', 'Logo & wordmark')}
+    <div class="lockrow">
+      <div class="lockup"><span class="wordmark wordmark--sm">${wm}<span class="dot">.</span></span></div>
+      <div class="lockrow" style="grid-template-columns:1fr 1fr">
+        <div class="lockup lockup--dark"><span class="wordmark wordmark--sm">${wm1}</span></div>
+        <div class="lockup lockup--light"><span class="wordmark wordmark--sm">${wm1}</span></div>
       </div>
     </div>
+    <div class="grid" style="grid-template-columns:1fr 1fr;gap:24px;align-items:stretch">
+      <div class="stack"><p class="eyebrow">Construction &amp; clearspace</p><div class="construct"><span class="wmC">${wm1}</span></div></div>
+      <div class="stack"><p class="eyebrow">Misuse</p><div class="misuse">${misuse}</div></div>
+    </div>
+    ${ct.logo && ct.logo.length ? `<div class="stack"><p class="eyebrow">Rules</p><ul class="valuelist" style="gap:0">${ct.logo.map((l) => `<li style="font-family:var(--fb);font-size:15px;font-weight:400">${esc(l)}</li>`).join('')}</ul></div>` : ''}
+  </div></section>
+
+  <section class="band sec"><div class="wrap stack-lg">
+    ${sec('04', 'color', 'System', 'Color')}
+    <div class="colorbar"><div class="cb-primary"><span class="role">Primary 60%</span></div><div class="cb-secondary"><span class="role">Secondary 30%</span></div><div class="cb-accent"><span class="role">Accent 10%</span></div></div>
+    <div class="stack"><p class="eyebrow">Brand palette</p><div class="colorway">${namedColors}</div></div>
+    <div class="grid" style="grid-template-columns:1fr 1fr;gap:24px;align-items:start">
+      <div class="stack"><p class="eyebrow">Neutrals</p><div class="ramp">${ramp}</div></div>
+      <div class="stack"><p class="eyebrow">Gradient</p><div class="gradient"></div></div>
+    </div>
+  </div></section>
+
+  <section class="band sec"><div class="wrap stack-lg">
+    ${sec('05', 'type', 'System', 'Typography')}
+    <div class="grid" style="grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:center">
+      <div class="stack"><p class="eyebrow">Headline · ${esc(f.heading)}</p><p class="pullquote">“${claim.replace(/\.$/, '')}<span class="mark">.</span>”</p></div>
+      <div class="stack"><p class="eyebrow">Body · ${esc(f.body)}</p><p class="body">Set at ${(scale.body) || 16}px with a 1.65 line height and a measure around 66 characters — the sweet spot for sustained reading across every touchpoint.</p></div>
+    </div>
+    <div>${typeRows}</div>
+  </div></section>
+
+  <section class="band sec"><div class="wrap stack-lg">
+    ${sec('06', 'icon', 'System', 'Icon & shape')}
+    <div class="grid" style="grid-template-columns:1fr 1fr;gap:24px;align-items:center">
+      <div class="stack"><p class="eyebrow">Icons · ${(t.space && 'stroke 2 · grid 24') || ''}</p><div class="iconrow">${icons}</div></div>
+      <div class="stack"><p class="eyebrow">Corner language</p><div class="shapes"><div class="shape r-sm"></div><div class="shape r-md"></div><div class="shape r-lg"></div><div class="shape r-pill"></div></div></div>
+    </div>
+  </div></section>
+
+  <section class="band sec"><div class="wrap stack-lg">
+    ${sec('07', 'motion', 'System', 'Motion')}
+    <div class="motion-track">
+      <div class="row2"><span class="meta">fast · ${(t.motion && t.motion.duration_ms && t.motion.duration_ms.fast) || 150}ms</span><div class="dotrun fast"><i></i></div></div>
+      <div class="row2"><span class="meta">base · ${(t.motion && t.motion.duration_ms && t.motion.duration_ms.base) || 250}ms</span><div class="dotrun"><i></i></div></div>
+      <div class="row2"><span class="meta">slow · ${(t.motion && t.motion.duration_ms && t.motion.duration_ms.slow) || 400}ms</span><div class="dotrun slow"><i></i></div></div>
+    </div>
+    <p class="caption">Easing <span class="mono">${(t.motion && t.motion.easing) || 'cubic-bezier(.2,0,0,1)'}</span> · purposeful, unobtrusive, consistent.</p>
+  </div></section>
+
+  <section class="band sec"><div class="wrap stack-lg">
+    ${sec('08', 'grid', 'System', 'Grid & spacing')}
+    <div class="gridsys">${Array.from({ length: 12 }).map(() => '<span></span>').join('')}</div>
+    <div class="stack"><p class="eyebrow">8-pt spacing scale</p><div class="stack">${((t.space && t.space.scale) || [0, 4, 8, 16, 24, 32, 48, 64]).map((v, i) => `<div class="row"><span class="caption muted" style="width:110px">space-${i} · ${v}px</span><div class="bar" style="width:${Math.max(v, 2)}px"></div></div>`).join('')}</div></div>
+  </div></section>
+
+  <section class="band sec"><div class="wrap stack-lg">
+    ${sec('09', 'components', 'System', 'Components')}
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:start">
+      <div class="card"><div class="card__bar"></div><p class="eyebrow card__eyebrow">${esc(b.branche)}</p><h3 class="h3" style="margin:6px 0 10px">${wm}</h3><p class="body" style="font-size:15px">${claim}</p><div class="row" style="margin-top:18px"><button class="btn btn--primary btn--sm">Primary</button><button class="btn btn--ghost btn--sm">Details</button></div></div>
+      <div class="stack">
+        <div class="row"><button class="btn btn--primary">Primary</button><button class="btn btn--accent">Accent</button><button class="btn btn--secondary">Secondary</button><button class="btn btn--ghost">Ghost</button></div>
+        <div class="row"><span class="badge badge--primary">Primary</span><span class="badge badge--accent">Accent</span><span class="badge badge--soft">Soft</span><span class="badge badge--success">Success</span><span class="badge badge--warning">Warning</span><span class="badge badge--danger">Danger</span></div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="band sec"><div class="wrap stack-lg">
+    ${sec('10', 'apps', 'In the wild', 'Applications')}
+    <div class="apps">
+      <div><div class="stage"><div class="bizcard"><div class="wm">${wm}</div><div class="meta">${esc(b.branche)}<br>hello@${domain}<br>${domain}</div></div></div><p class="stage__cap">Business card</p></div>
+      <div><div class="stage"><div class="letterhead"><div class="lh-top"><span class="lh-wm">${wm}</span><span style="font-family:var(--font-mono);font-size:10px;color:var(--muted)">${domain}</span></div><div class="lh-lines"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div><p class="stage__cap">Letterhead</p></div>
+      <div><div class="stage"><div class="post"><div class="img" style="background-image:url('${imgs[1] || hero || ''}')"></div><div class="veil"></div><div class="inner"><span class="tag">${esc(persona[0] || 'new')}</span><div class="headline">${claim}</div></div></div></div><p class="stage__cap">Social post</p></div>
+      <div><div class="stage"><div class="poster"><div class="kicker">${esc(b.branche)}</div><div class="stack" style="gap:14px"><div class="rule"></div><div class="big">${claim}</div></div><div class="kicker">${wm} — ${domain}</div></div></div><p class="stage__cap">Poster</p></div>
+      <div><div class="stage"><div class="phone"><div class="notch"></div><div class="appbar">${wm}</div><div class="appimg" style="background-image:url('${imgs[2] || hero || ''}')"></div><div class="appcard"><div class="t">${esc(persona[1] || b.name)}</div><div class="d">${esc(b.branche)}</div></div><div class="appbtn">Get started</div></div></div><p class="stage__cap">App screen</p></div>
+      <div><div class="stage"><div class="pack"><div class="p-wm">${wm1}</div><div class="p-dot"></div></div></div><p class="stage__cap">Packaging</p></div>
+      <div><div class="stage"><div class="signage">${wm1}</div></div><p class="stage__cap">Signage</p></div>
+    </div>
+  </div></section>
+
+  <section class="band sec"><div class="wrap stack-lg">
+    ${sec('11', 'a11y', 'Quality', 'Accessibility')}
+    <p class="body">Every color pairing is measured against WCAG. Body text must reach ≥ 4.5:1.</p>
+    <div class="pairings">
+      ${pair('Body on paper', n['0'] || '#fff', n['900'] || '#111')}
+      ${pair('On primary', c.primary || '#123', bestOn(c.primary || '#123'))}
+      ${pair('On accent', c.accent || '#5be0b0', bestOn(c.accent || '#5be0b0'))}
+      ${pair('On secondary', c.secondary || '#345', bestOn(c.secondary || '#345'))}
+    </div>
+  </div></section>
+
+  <section class="band sec"><div class="wrap stack-lg">
+    ${sec('12', 'assets', 'Resources', 'Assets & downloads')}
+    <div class="downloads">
+      ${dl('Logo', 'SVG · EPS · PNG', 'SVG')}
+      ${dl('Wordmark', 'light &amp; dark', 'PNG')}
+      ${dl(esc(f.heading), 'Webfont', 'WOFF2')}
+      ${dl('Design tokens', 'colors · type · space', 'JSON')}
+      ${dl('Guidelines', 'this document', 'PDF')}
+    </div>
+    <p class="caption">${wm} — Brand Guidelines · fictional brand · photography via Unsplash · type via Google Fonts.</p>
   </div></section>`;
 };
