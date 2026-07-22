@@ -43,6 +43,6 @@ export const parameters = {
   layout: 'fullscreen',
   controls: { hideNoControlsWarning: true },
   options: {
-    storySort: { order: ['Brand', 'Foundations', 'Components'] },
+    storySort: { order: ['Portal', 'Brand', 'Foundations', 'Components'] },
   },
 };
