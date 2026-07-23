@@ -1,0 +1,13 @@
+name: Kaltstart
+branche: Developer-Tooling / API-Plattform
+anrede: du
+claim:
+persoenlichkeit:
+  - präzise
+  - schnörkellos
+  - schnell
+  - verlässlich
+farb_richtung: kühles Elektroblau und ein Signal-Cyan als Akzent auf fast-schwarzem Anthrazit, dark-first
+typo_richtung: technische Grotesk mit leicht mechanischem Charakter fürs Headline, klare Grotesk fürs Body, Monospace für Code
+bild_richtung: dunkle Terminal- und Code-Ästhetik, Datenströme, kühles Neon, viel Negativraum, körnig
+notes: Zielgruppe Entwickler:innen, die Latenz hassen; ehrlich, keine Buzzwords, keine Stockfoto-Anzüge.
